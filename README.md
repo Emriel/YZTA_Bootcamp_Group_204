@@ -1,9 +1,8 @@
 <body>
 
 <!-- HEADER GÖRSELLERİ -->
-<img src="bootcampFiles/general/headers/medisim.png" alt="MediSim Logo" />
+<img src="readmeFiles/social/medisimlogo.png" alt="MediSim Logo" />
 
-<img src="bootcampFiles/general/headers/teamandproduct.png" alt="Team and Product" />
 
 <!-- TEAM & PRODUCT NAME -->
 <h1><b>Team & Product Name</b></h1>
