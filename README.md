@@ -27,8 +27,8 @@
     <td>Elif Kartal</td>
     <td>Developer</td>
     <td>
-      <a href="https://github.com/itselif" target="_blank"><img src="bootcampFiles/general/social/github.png" width="20" height="20"/></a>
-      <a href="https://www.linkedin.com/in/itselif/" target="_blank"><img src="bootcampFiles/general/social/linkedin.png" width="20" height="20" /></a>
+      <a href="https://github.com/itselif" target="_blank"><img src="readmeFiles/social/github.png" width="20" height="20"/></a>
+      <a href="https://www.linkedin.com/in/itselif/" target="_blank"><img src="readmeFiles/social/linkedin.png" width="20" height="20" /></a>
     </td>
   </tr>
 
@@ -37,8 +37,8 @@
     <td>Emirhan Toprak</td>
     <td>Scrum Master</td>
     <td>
-      <a href="https://github.com/Emriel" target="_blank"><img src="bootcampFiles/general/social/github.png" width="20" height="20"/></a>
-      <a href="https://www.linkedin.com/in/emirhantoprak" target="_blank"><img src="bootcampFiles/general/social/linkedin.png" width="20" height="20" /></a>
+      <a href="https://github.com/Emriel" target="_blank"><img src="readmeFiles/social/github.png" width="20" height="20"/></a>
+      <a href="https://www.linkedin.com/in/emirhantoprak" target="_blank"><img src="readmeFiles/social/linkedin.png" width="20" height="20" /></a>
     </td>
   </tr>
 
@@ -47,8 +47,8 @@
     <td>Ömer Biltekin</td>
     <td>Developer</td>
     <td>
-      <a href="https://github.com/omerbiltekin" target="_blank"><img src="bootcampFiles/general/social/github.png" width="20" height="20"/></a>
-      <a href="https://www.linkedin.com/in/omerbiltekin/" target="_blank"><img src="bootcampFiles/general/social/linkedin.png" width="20" height="20" /></a>
+      <a href="https://github.com/omerbiltekin" target="_blank"><img src="readmeFiles/social/github.png" width="20" height="20"/></a>
+      <a href="https://www.linkedin.com/in/omerbiltekin/" target="_blank"><img src="readmeFiles/social/linkedin.png" width="20" height="20" /></a>
     </td>
   </tr>
 
@@ -57,8 +57,8 @@
     <td>Şevval Demir</td>
     <td>Product Owner</td>
     <td>
-      <a href="https://github.com/Sevval-Demir" target="_blank"><img src="bootcampFiles/general/social/github.png" width="20" height="20"/></a>
-      <a href="https://www.linkedin.com/in/%C5%9Fevval-demir/" target="_blank"><img src="bootcampFiles/general/social/linkedin.png" width="20" height="20" /></a>
+      <a href="https://github.com/Sevval-Demir" target="_blank"><img src="readmeFiles/social/github.png" width="20" height="20"/></a>
+      <a href="https://www.linkedin.com/in/%C5%9Fevval-demir/" target="_blank"><img src="readmeFiles/social/linkedin.png" width="20" height="20" /></a>
     </td>
   </tr>
 
@@ -67,8 +67,8 @@
     <td>Umut Sönmez</td>
     <td>Developer</td>
     <td>
-      <a href="https://github.com/UmutSonmezz" target="_blank"><img src="bootcampFiles/general/social/github.png" width="20" height="20"/></a>
-      <a href="https://www.linkedin.com/in/umut-s%C3%B6nmez-b66399230/" target="_blank"><img src="bootcampFiles/general/social/linkedin.png" width="20" height="20" /></a>
+      <a href="https://github.com/UmutSonmezz" target="_blank"><img src="readmeFiles/social/github.png" width="20" height="20"/></a>
+      <a href="https://www.linkedin.com/in/umut-s%C3%B6nmez-b66399230/" target="_blank"><img src="readmeFiles/social/linkedin.png" width="20" height="20" /></a>
     </td>
   </tr>
 
