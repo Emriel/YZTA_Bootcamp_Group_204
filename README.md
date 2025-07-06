@@ -1,7 +1,7 @@
 <body>
 
 <!-- HEADER GÖRSELLERİ -->
-<img src="readmeFiles/social/medisimlogo.png" alt="MediSim Logo" />
+<img src="readmeFiles/pics/medisimlogo.png" alt="MediSim Logo" />
 
 
 <!-- TEAM & PRODUCT NAME -->
