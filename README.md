@@ -170,11 +170,6 @@ MediSim'in hedef kitlesi başta tıp fakültesi öğrencileri olmak üzere, klin
 <img src="bootcampFiles/sprintOne/boardupdate/board2.png" style="max-width: 100%; height: auto;">
 </details>
 
-<details>
-<summary><h3>Sprint 1 - Burndown Chart</h3></summary>
-<img src="bootcampFiles/sprintOne/burndown/chart.png" style="max-width: 100%; height: auto;">
-</details>
-
 <!-- SPRINT NOTES -->
 <ul>
   <li>Proje yönetimi için Trello kullanılacak.</li>
@@ -209,15 +204,6 @@ MediSim'in hedef kitlesi başta tıp fakültesi öğrencileri olmak üzere, klin
   <li>LLM entegrasyonu beklenenden zorlu çıktı, ikinci sprintte daha fazla test planlanıyor.</li>
   <li>Veritabanı bağlantısı stabil, veri modelleme üzerine ek çalışmalar yapılacak.</li>
 </ul>
-
-<!-- ADDITIONAL FILES -->
-<details>
-<summary><h3>Additional Files</h3></summary>
-<ul>
-  <li><b>Project Scope and Goals:</b> <a href="./bootcampFiles/sprintOne/projectscope.pdf">View File</a></li>
-  <li><b>Target Audience Analysis:</b> <a href="./bootcampFiles/sprintOne/targetaudience.pdf">View File</a></li>
-</ul>
-</details>
 
 </details>
 
