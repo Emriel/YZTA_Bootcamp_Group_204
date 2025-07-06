@@ -25,7 +25,7 @@
 
   <!-- Örnek Üye -->
   <tr>
-    <td><img src="bootcampFiles/general/squarepics/elif.png" width="50" height="50" /></td>
+    <td><img src="readmeFiles/pics/elif.png" width="50" height="50" /></td>
     <td>Elif Kartal</td>
     <td>Developer</td>
     <td>
@@ -35,7 +35,7 @@
   </tr>
 
   <tr>
-    <td><img src="bootcampFiles/general/squarepics/emirhan.png" width="50" height="50" /></td>
+    <td><img src="readmeFiles/pics/emirhan.png" width="50" height="50" /></td>
     <td>Emirhan Toprak</td>
     <td>Scrum Master</td>
     <td>
@@ -45,7 +45,7 @@
   </tr>
 
   <tr>
-    <td><img src="bootcampFiles/general/squarepics/ömer.png" width="50" height="50" /></td>
+    <td><img src="readmeFiles/pics/omer.png" width="50" height="50" /></td>
     <td>Ömer Biltekin</td>
     <td>Developer</td>
     <td>
@@ -55,7 +55,7 @@
   </tr>
 
   <tr>
-    <td><img src="bootcampFiles/general/squarepics/sevval.png" width="50" height="50" /></td>
+    <td><img src="readmeFiles/pics/sevval.png" width="50" height="50" /></td>
     <td>Şevval Demir</td>
     <td>Product Owner</td>
     <td>
@@ -65,7 +65,7 @@
   </tr>
 
   <tr>
-    <td><img src="bootcampFiles/general/squarepics/umut.png" width="50" height="50" /></td>
+    <td><img src="readmeFiles/pics/umut.png" width="50" height="50" /></td>
     <td>Umut Sönmez</td>
     <td>Developer</td>
     <td>
