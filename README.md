@@ -3,7 +3,7 @@
 <!-- HEADER GÖRSELLERİ -->
 
 <p align="center">
-  <img src="readmeFiles/pics/medisimlogo.png" alt="MediSim Logo" width="300"/>
+  <img src="readmeFiles/pics/medisim.png" alt="MediSim Logo" width="320"/>
 </p>
  
 
