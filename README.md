@@ -133,7 +133,6 @@ MediSim'in hedef kitlesi başta tıp fakültesi öğrencileri olmak üzere, klin
 <hr />
 
 <!-- SPRINTS HEADER -->
-<img src="bootcampFiles/general/headers/sprints.png" alt="Sprints" />
 
 <!-- SPRINT 1 TEMPLATE -->
 <details>
@@ -142,19 +141,25 @@ MediSim'in hedef kitlesi başta tıp fakültesi öğrencileri olmak üzere, klin
 <details>
 <summary><h3>Sprint 1 - App Screenshots</h3></summary>
 <table style="width: 100%;">
+   <tr>
+    <td style="text-align: center;" colspan="3"><h2>Homepage</h2></td>
+  </tr>
+  <tr>
+    <td><img src="readmeFiles/sprintOne/screenshots/homepage.png" style="max-width: 100%; height: auto;"></td>
+  </tr>
   <tr>
     <td style="text-align: center;" colspan="3"><h2>Login & Register Pages</h2></td>
   </tr>
   <tr>
-    <td><img src="bootcampFiles/sprintOne/screenshots/login.png" style="max-width: 100%; height: auto;"></td>
-    <td><img src="bootcampFiles/sprintOne/screenshots/register.png" style="max-width: 100%; height: auto;"></td>
+    <td><img src="readmeFiles/sprintOne/screenshots/signin.png" style="max-width: 100%; height: auto;"></td>
+    <td><img src="readmeFiles/sprintOne/screenshots/signup.png" style="max-width: 100%; height: auto;"></td>
   </tr>
   <tr>
     <td colspan="3" style="text-align: center;"><h2>Dashboard & Clinic Selection</h2></td>
   </tr>
   <tr>
-    <td><img src="bootcampFiles/sprintOne/screenshots/dashboard.png" style="max-width: 100%; height: auto;"></td>
-    <td><img src="bootcampFiles/sprintOne/screenshots/clinic-selection.png" style="max-width: 100%; height: auto;"></td>
+    <td><img src="readmeFiles/sprintOne/screenshots/dashboard.png" style="max-width: 100%; height: auto;"></td>
+    <td><img src="readmeFiles/sprintOne/screenshots/activesim.png" style="max-width: 100%; height: auto;"></td>
   </tr>
 </table>
 </details>
