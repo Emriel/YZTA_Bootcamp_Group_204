@@ -1,8 +1,11 @@
 <body>
 
 <!-- HEADER GÖRSELLERİ -->
-<img src="readmeFiles/pics/medisimlogo.png" alt="MediSim Logo" />
 
+<p align="center">
+  <img src="readmeFiles/pics/medisimlogo.png" alt="MediSim Logo" width="300"/>
+</p>
+ 
 
 <!-- TEAM & PRODUCT NAME -->
 <h1><b>Team & Product Name</b></h1>
