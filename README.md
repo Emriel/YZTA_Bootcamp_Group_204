@@ -166,9 +166,22 @@ MediSim'in hedef kitlesi başta tıp fakültesi öğrencileri olmak üzere, klin
 
 <details>
 <summary><h3>Sprint 1 - Sprint Board </h3></summary>
-<img src="bootcampFiles/sprintOne/boardupdate/board1.png" style="max-width: 100%; height: auto;">
-<img src="bootcampFiles/sprintOne/boardupdate/board2.png" style="max-width: 100%; height: auto;">
+<img src="readmeFiles/pics/Trello.png" style="max-width: 100%; height: auto;">
 </details>
+
+<details>
+<summary><h3>Sprint 1 - Daily Scrum Screen Shots </h3></summary>
+<img src="readmeFiles/Daily Scrum/meetingscreenshot1.png" style="max-width: 100%; height: auto;">
+<img src="readmeFiles/Daily Scrum/1.png" style="max-width: 100%; height: auto;">
+<img src="readmeFiles/Daily Scrum/2.png" style="max-width: 100%; height: auto;">
+<img src="readmeFiles/Daily Scrum/3.png" style="max-width: 100%; height: auto;">
+<img src="readmeFiles/Daily Scrum/4.png" style="max-width: 100%; height: auto;">
+<img src="readmeFiles/Daily Scrum/5.png" style="max-width: 100%; height: auto;">
+<img src="readmeFiles/Daily Scrum/6.png" style="max-width: 100%; height: auto;">
+<img src="readmeFiles/Daily Scrum/7.png" style="max-width: 100%; height: auto;">
+<img src="readmeFiles/Daily Scrum/8.png" style="max-width: 100%; height: auto;">
+<img src="readmeFiles/Daily Scrum/9.png" style="max-width: 100%; height: auto;">
+</details
 
 <!-- SPRINT NOTES -->
 <ul>
