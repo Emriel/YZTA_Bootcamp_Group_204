@@ -30,10 +30,9 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange, isOpen, onClo
 
   const instructorTabs = [
     { id: 'dashboard', label: 'Dashboard', icon: Home },
-    { id: 'cases', label: 'Manage Cases', icon: FileText },
-    { id: 'students', label: 'Students', icon: Users },
-    { id: 'analytics', label: 'Analytics', icon: BarChart3 },
-    { id: 'library', label: 'Case Library', icon: BookOpen },
+    { id: 'cases', label: 'Cases', icon: FileText },
+    { id: 'simulation', label: 'Active Simulation', icon: Activity },
+    { id: 'library', label: 'Manage Cases', icon: BookOpen },
     { id: 'settings', label: 'Settings', icon: Settings },
   ];
 
