@@ -22,16 +22,16 @@ const Home: React.FC<HomeProps> = ({ onLoginClick, onRegisterClick }: HomeProps)
       {/* Main Content */}
       <main className="flex flex-1 flex-col justify-center items-center text-center px-4">
         <div className="mt-32 mb-10 max-w-2xl">
-          <h1 className="text-4xl md:text-5xl font-bold text-blue-800 mb-6 drop-shadow-sm">MediSim'e Hoşgeldiniz!</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-blue-800 mb-6 drop-shadow-sm">Welcome to MediSim!</h1>
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed bg-white/70 rounded-xl p-6 shadow">
-            MediSim, tıp öğrencileri için geliştirilen yapay zeka destekli, web tabanlı bir hasta simülasyon platformudur. Öğrenciler, sanal hastalar ile etkileşime geçerek vaka analizi yapabilir, teşhis koyabilir ve klinik pratiğe hazırlanabilir. LLM teknolojisi ile desteklenen sistem, gerçekçi diyalog ve semptom aktarımı sunar.
+            MediSim is an artificial intelligence-powered, web-based patient simulation platform developed for medical students. By interacting with virtual patients, students can analyze cases, make diagnoses and prepare for clinical practice. Supported by LLM technology, the system offers realistic dialog and symptom transfer.
           </p>
         </div>
       </main>
 
       {/* Footer */}
       <footer className="w-full text-center py-4 text-gray-500 text-sm absolute bottom-0 left-0 bg-transparent">
-        © 2025 | YZTA Bootcamp Group 204 tarafından yapılmıştır
+        © 2025 | Made by YZTA Bootcamp Group 204 
       </footer>
     </div>
   );
