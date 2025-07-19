@@ -47,7 +47,7 @@ const SimulationInterface: React.FC<SimulationInterfaceProps> = ({ caseId, onCom
           const initialMessage: AIInteraction = {
             id: '1',
             sessionId: 'current',
-            question: 'Welcome to patient simulation',
+            question: '', // AI greeting için question boş
             response: greeting,
             timestamp: new Date().toISOString(),
             type: 'symptom_inquiry'
@@ -63,7 +63,7 @@ const SimulationInterface: React.FC<SimulationInterfaceProps> = ({ caseId, onCom
           const fallbackMessage: AIInteraction = {
             id: '1',
             sessionId: 'current',
-            question: 'Welcome to patient simulation',
+            question: '', // AI greeting için question boş
             response: `Hello doctor. I'm a ${foundCase.patientInfo.age}-year-old ${foundCase.patientInfo.gender} patient. ${foundCase.description} I'd like to consult with you about this issue.`,
             timestamp: new Date().toISOString(),
             type: 'symptom_inquiry'
@@ -89,7 +89,7 @@ const SimulationInterface: React.FC<SimulationInterfaceProps> = ({ caseId, onCom
       id: Date.now().toString(),
       sessionId: 'current',
       question: inputMessage,
-      response: '',
+      response: '', // Kullanıcı mesajı için response boş bırakılıyor
       timestamp: new Date().toISOString(),
       type: 'symptom_inquiry'
     };
@@ -105,7 +105,7 @@ const SimulationInterface: React.FC<SimulationInterfaceProps> = ({ caseId, onCom
       const aiResponse: AIInteraction = {
         id: (Date.now() + 1).toString(),
         sessionId: 'current',
-        question: currentQuestion,
+        question: '', // AI response için question boş bırakılıyor
         response: patientResponse.response,
         timestamp: new Date().toISOString(),
         type: currentStep === 'history' ? 'symptom_inquiry' : 
@@ -121,7 +121,7 @@ const SimulationInterface: React.FC<SimulationInterfaceProps> = ({ caseId, onCom
       const fallbackResponse: AIInteraction = {
         id: (Date.now() + 1).toString(),
         sessionId: 'current',
-        question: currentQuestion,
+        question: '', // AI response için question boş
         response: 'I\'m sorry, I can\'t respond to you right now. Please try again or check your API key.',
         timestamp: new Date().toISOString(),
         type: 'symptom_inquiry'
@@ -146,7 +146,7 @@ const SimulationInterface: React.FC<SimulationInterfaceProps> = ({ caseId, onCom
     const stepMessage: AIInteraction = {
       id: Date.now().toString(),
       sessionId: 'current',
-      question: `Moving to ${step} phase`,
+      question: '', // System message için question boş
       response: stepMessages[step],
       timestamp: new Date().toISOString(),
       type: 'symptom_inquiry'
