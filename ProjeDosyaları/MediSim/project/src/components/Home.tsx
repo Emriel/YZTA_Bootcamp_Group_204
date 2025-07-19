@@ -13,8 +13,7 @@ const Home: React.FC<HomeProps> = ({ onLoginClick, onRegisterClick }) => {
       <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-lg">
         <div className="max-w-6xl mx-auto px-4 flex h-16 items-center justify-between">
           <div className="flex items-center space-x-2">
-            <img src="/medisimlogo.png" alt="MediSim Logo" className="w-16 h-16 rounded-lg object-contain bg-blue-600 p-1" />
-            
+            <img src="/medisimlogoDAR.png" alt="MediSim Logo" className="h-12 w-auto" />
           </div>
           
           <div className="flex items-center space-x-3">
@@ -110,8 +109,7 @@ const Home: React.FC<HomeProps> = ({ onLoginClick, onRegisterClick }) => {
         <div className="max-w-6xl mx-auto px-4 text-center">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-4">
             <div className="flex items-center space-x-2 justify-center md:justify-start">
-              <img src="/medisimlogo.png" alt="MediSim Logo" className="w-8 h-8 rounded-lg object-contain bg-blue-600 p-1" />
-              <span className="text-xl font-bold">MediSim</span>
+              <img src="/medisimlogoDAR.png" alt="MediSim Logo" className="h-8 w-auto" />
             </div>
             <div className="text-gray-400">Empowering the next generation of medical professionals through AI-powered simulation.</div>
           </div>
