@@ -8,12 +8,14 @@ import InstructorDashboard from './components/Dashboard/InstructorDashboard';
 import CaseList from './components/Cases/CaseList';
 import SimulationInterface from './components/Simulation/SimulationInterface';
 import PerformanceAnalytics from './components/Performance/PerformanceAnalytics';
+import Home from './components/Home';
 
 const AppContent: React.FC = () => {
   const { isAuthenticated, user } = useAuth();
   const [activeTab, setActiveTab] = useState('dashboard');
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [currentCaseId, setCurrentCaseId] = useState<string | null>(null);
+  const [showAuth, setShowAuth] = useState(false);
 
   const handleStartCase = (caseId: string) => {
     setCurrentCaseId(caseId);
@@ -28,6 +30,9 @@ const AppContent: React.FC = () => {
   };
 
   if (!isAuthenticated) {
+    if (!showAuth) {
+      return <Home onLoginClick={() => setShowAuth(true)} onRegisterClick={() => setShowAuth(true)} />;
+    }
     return <AuthForm />;
   }
 
