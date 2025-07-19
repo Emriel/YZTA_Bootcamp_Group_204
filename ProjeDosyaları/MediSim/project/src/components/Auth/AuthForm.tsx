@@ -46,7 +46,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ isLoginDefault = true }) => {
       <div className="max-w-md w-full space-y-8">
         <div className="text-center">
           <div className="flex items-center justify-center mb-6">
-            <img src="/medisimlogo.png" alt="MediSim Logo" className="w-20 h-20 object-contain rounded-full" />
+            <img src="/medisimlogoDAR.png" alt="MediSim Logo" className="w-auto h-12 object-contain rounded-full" />
           </div>
           <h2 className="text-3xl font-bold text-gray-900">
             Welcome to MediSim
