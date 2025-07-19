@@ -1,6 +1,9 @@
 export interface User {
   id: string;
   name: string;
+  surname?: string;
+  birthdate?: string;
+  gender?: 'male' | 'female' | 'other';
   email: string;
   role: 'student' | 'instructor';
   avatar?: string;

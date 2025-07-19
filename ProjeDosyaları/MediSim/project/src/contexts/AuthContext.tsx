@@ -79,6 +79,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const mockUser: User = {
       id: '1',
       name: email.includes('instructor') ? 'Dr. Sarah Johnson' : 'Alex Chen',
+      surname: email.includes('instructor') ? 'Johnson' : 'Chen', // Added
+      birthdate: '1990-01-01', // Added
+      gender: email.includes('instructor') ? 'female' : 'male', // Added
       email,
       role: email.includes('instructor') ? 'instructor' : 'student',
       avatar: `https://images.pexels.com/photos/${email.includes('instructor') ? '5452268' : '8947825'}/pexels-photo-${email.includes('instructor') ? '5452268' : '8947825'}.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2`,
@@ -98,6 +101,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const mockUser: User = {
       id: Math.random().toString(36).substr(2, 9),
       name,
+      surname: 'Surname', // Added
+      birthdate: '1990-01-01', // Added
+      gender: role === 'instructor' ? 'female' : 'male', // Added
       email,
       role,
       avatar: `https://images.pexels.com/photos/${role === 'instructor' ? '5452268' : '8947825'}/pexels-photo-${role === 'instructor' ? '5452268' : '8947825'}.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2`,

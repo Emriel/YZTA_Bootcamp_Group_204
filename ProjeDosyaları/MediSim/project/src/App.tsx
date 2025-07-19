@@ -9,6 +9,7 @@ import CaseList from './components/Cases/CaseList';
 import SimulationInterface from './components/Simulation/SimulationInterface';
 import PerformanceAnalytics from './components/Performance/PerformanceAnalytics';
 import Home from './components/Home';
+import UserProfileSettings from './components/UserProfileSettings';
 
 const AppContent: React.FC = () => {
   const { isAuthenticated, user } = useAuth();
@@ -60,6 +61,8 @@ const AppContent: React.FC = () => {
         return <CaseList onStartCase={handleStartCase} />;
       case 'performance':
         return <PerformanceAnalytics />;
+      case 'settings':
+        return <UserProfileSettings />;
       default:
         return (
           <div className="text-center py-12">
