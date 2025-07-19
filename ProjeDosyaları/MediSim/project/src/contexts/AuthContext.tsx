@@ -73,45 +73,73 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const login = async (email: string, password: string) => {
     dispatch({ type: 'LOGIN_START' });
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    const mockUser: User = {
-      id: '1',
-      name: email.includes('instructor') ? 'Dr. Sarah Johnson' : 'Alex Chen',
-      surname: email.includes('instructor') ? 'Johnson' : 'Chen', // Added
-      birthdate: '1990-01-01', // Added
-      gender: email.includes('instructor') ? 'female' : 'male', // Added
-      email,
-      role: email.includes('instructor') ? 'instructor' : 'student',
-      avatar: `https://images.pexels.com/photos/${email.includes('instructor') ? '5452268' : '8947825'}/pexels-photo-${email.includes('instructor') ? '5452268' : '8947825'}.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2`,
-      createdAt: new Date().toISOString()
+     try {
+    const response = await fetch('http://localhost:3001/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username: email, password }),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok || !data.user) throw new Error(data.message || "Giriş başarısız");
+
+    const userFromBackend = data.user;
+
+    const fullUser: User = {
+      id: userFromBackend.id.toString(),
+      name: userFromBackend.username,
+      surname: '',
+      birthdate: '',
+      gender: userFromBackend.role === 'instructor' ? 'female' : 'male',
+      email: userFromBackend.username,
+      role: userFromBackend.role,
+      avatar: '',
+      createdAt: new Date().toISOString(),
     };
 
-    localStorage.setItem('medisim_user', JSON.stringify(mockUser));
-    dispatch({ type: 'LOGIN_SUCCESS', payload: mockUser });
+    localStorage.setItem('medisim_user', JSON.stringify(fullUser));
+    dispatch({ type: 'LOGIN_SUCCESS', payload: fullUser });
+  } catch (error) {
+    console.error("Login error:", error);
+    dispatch({ type: 'LOGIN_FAILURE' });
+    throw error;
+  }
   };
 
   const register = async (name: string, email: string, password: string, role: 'student' | 'instructor') => {
     dispatch({ type: 'REGISTER_START' });
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    const mockUser: User = {
-      id: Math.random().toString(36).substr(2, 9),
+    try {
+    const response = await fetch('http://localhost:3001/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username: email, password, role }),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok || !data.id) throw new Error(data.message || "Kayıt başarısız");
+
+    const newUser: User = {
+      id: data.id.toString(),
       name,
-      surname: 'Surname', // Added
-      birthdate: '1990-01-01', // Added
-      gender: role === 'instructor' ? 'female' : 'male', // Added
+      surname: '',
+      birthdate: '',
+      gender: role === 'instructor' ? 'female' : 'male',
       email,
       role,
-      avatar: `https://images.pexels.com/photos/${role === 'instructor' ? '5452268' : '8947825'}/pexels-photo-${role === 'instructor' ? '5452268' : '8947825'}.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2`,
-      createdAt: new Date().toISOString()
+      avatar: '',
+      createdAt: new Date().toISOString(),
     };
 
-    localStorage.setItem('medisim_user', JSON.stringify(mockUser));
-    dispatch({ type: 'REGISTER_SUCCESS', payload: mockUser });
+    localStorage.setItem('medisim_user', JSON.stringify(newUser));
+    dispatch({ type: 'REGISTER_SUCCESS', payload: newUser });
+  } catch (error) {
+    console.error("Register error:", error);
+    dispatch({ type: 'REGISTER_FAILURE' });
+    throw error;
+  }
   };
 
   const logout = () => {
