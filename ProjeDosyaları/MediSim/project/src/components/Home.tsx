@@ -34,7 +34,7 @@ const Home: React.FC<HomeProps> = ({ onLoginClick, onRegisterClick }) => {
             Train with AI-powered patient simulations that adapt to your learning style. Practice clinical reasoning, diagnostic skills, and patient interaction in a safe, controlled environment.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
-            <button onClick={onRegisterClick} className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-4 rounded-lg font-semibold transition">Start Training</button>
+            <button onClick={onLoginClick} className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-4 rounded-lg font-semibold transition">Start Training</button>
           </div>
         </div>
       </section>
@@ -99,7 +99,7 @@ const Home: React.FC<HomeProps> = ({ onLoginClick, onRegisterClick }) => {
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">Ready to Transform Your Medical Education?</h2>
           <p className="text-xl text-blue-100 mb-8">Join thousands of medical students and professionals who are already advancing their careers with MediSim.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button onClick={onRegisterClick} className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4 rounded-lg font-semibold transition">Start Free Trial</button>
+            <button onClick={onLoginClick} className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4 rounded-lg font-semibold transition">Start Free Trial</button>
           </div>
         </div>
       </section>
