@@ -11,6 +11,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ isLoginDefault = true }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
+    surname: '',
     email: '',
     password: '',
     role: 'student' as 'student' | 'instructor'
@@ -27,7 +28,7 @@ const AuthForm: React.FC<AuthFormProps> = ({ isLoginDefault = true }) => {
       if (isLogin) {
         await login(formData.email, formData.password);
       } else {
-        await register(formData.name, formData.email, formData.password, formData.role);
+        await register(formData.name, formData.surname, formData.email, formData.password, formData.role);
       }
     } catch (error) {
       setErrors({ general: 'Authentication failed. Please try again.' });
@@ -59,24 +60,44 @@ const AuthForm: React.FC<AuthFormProps> = ({ isLoginDefault = true }) => {
         <div className="bg-white rounded-xl shadow-lg p-8">
           <form onSubmit={handleSubmit} className="space-y-6">
             {!isLogin && (
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                  Full Name
-                </label>
-                <div className="relative">
-                  <User className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    required={!isLogin}
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-                    placeholder="Enter your full name"
-                  />
+              <>
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    Name
+                  </label>
+                  <div className="relative">
+                    <User className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+                    <input
+                      id="name"
+                      name="name"
+                      type="text"
+                      required={!isLogin}
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                      placeholder="Enter your name"
+                    />
+                  </div>
                 </div>
-              </div>
+                <div>
+                  <label htmlFor="surname" className="block text-sm font-medium text-gray-700 mb-2">
+                    Surname
+                  </label>
+                  <div className="relative">
+                    <User className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+                    <input
+                      id="surname"
+                      name="surname"
+                      type="text"
+                      required={!isLogin}
+                      value={formData.surname}
+                      onChange={handleChange}
+                      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+                      placeholder="Enter your surname"
+                    />
+                  </div>
+                </div>
+              </>
             )}
 
             <div>

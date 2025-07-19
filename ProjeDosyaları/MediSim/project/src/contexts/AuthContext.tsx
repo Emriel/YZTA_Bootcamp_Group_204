@@ -9,7 +9,7 @@ interface AuthState {
 
 interface AuthContextType extends AuthState {
   login: (email: string, password: string) => Promise<void>;
-  register: (name: string, email: string, password: string, role: 'student' | 'instructor') => Promise<void>;
+  register: (name: string, surname: string, email: string, password: string, role: 'student' | 'instructor') => Promise<void>;
   logout: () => void;
 }
 
@@ -107,7 +107,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }
   };
 
-  const register = async (name: string, email: string, password: string, role: 'student' | 'instructor') => {
+  const register = async (name: string, surname: string, email: string, password: string, role: 'student' | 'instructor') => {
     dispatch({ type: 'REGISTER_START' });
     
     try {
@@ -124,7 +124,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const newUser: User = {
       id: data.id.toString(),
       name,
-      surname: '',
+      surname,
       birthdate: '',
       gender: role === 'instructor' ? 'female' : 'male',
       email,
