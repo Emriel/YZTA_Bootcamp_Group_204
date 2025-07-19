@@ -20,9 +20,12 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
               <Menu className="h-6 w-6" />
             </button>
             <div className="flex items-center ml-2 md:ml-0">
-              <img src="/medisimlogo.png" alt="MediSim Logo" className="w-8 h-8 object-contain rounded-full" />
-              <h1 className="ml-2 text-xl font-bold text-gray-900">MediSim</h1>
-            </div>
+              <img 
+                src="/medisimlogoDAR.png" 
+                alt="MediSim Logo" 
+                className="h-10 w-auto"
+              />
+            </div>
           </div>
 
           <div className="flex items-center space-x-4">
