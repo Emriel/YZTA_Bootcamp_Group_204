@@ -7,7 +7,6 @@ import {
   Settings, 
   BookOpen, 
   Users, 
-  Trophy,
   Activity,
   X
 } from 'lucide-react';
@@ -26,8 +25,6 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange, isOpen, onClo
     { id: 'dashboard', label: 'Dashboard', icon: Home },
     { id: 'cases', label: 'Cases', icon: FileText },
     { id: 'simulation', label: 'Active Simulation', icon: Activity },
-    { id: 'performance', label: 'Performance', icon: BarChart3 },
-    { id: 'achievements', label: 'Achievements', icon: Trophy },
     { id: 'settings', label: 'Settings', icon: Settings },
   ];
 

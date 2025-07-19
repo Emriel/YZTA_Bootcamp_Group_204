@@ -1,15 +1,13 @@
 import React from 'react';
 import { useAuth } from '../../contexts/AuthContext';
-import { Heart, User, LogOut, Menu, Bell } from 'lucide-react';
+import { User, LogOut, Menu, Bell } from 'lucide-react';
 
 interface HeaderProps {
   onMenuClick: () => void;
-  showMobileMenu?: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({ onMenuClick, showMobileMenu = false }) => {
+const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
   const { user, logout } = useAuth();
-
   return (
     <header className="bg-white shadow-sm border-b border-gray-200">
       <div className="px-4 sm:px-6 lg:px-8">
@@ -22,9 +20,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick, showMobileMenu = false }) 
               <Menu className="h-6 w-6" />
             </button>
             <div className="flex items-center ml-2 md:ml-0">
-              <div className="flex items-center justify-center w-8 h-8 bg-blue-600 rounded-lg">
-                <Heart className="h-5 w-5 text-white" />
-              </div>
+              <img src="/medisimlogo.png" alt="MediSim Logo" className="w-8 h-8 object-contain rounded-full" />
               <h1 className="ml-2 text-xl font-bold text-gray-900">MediSim</h1>
             </div>
           </div>
@@ -33,7 +29,6 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick, showMobileMenu = false }) 
             <button className="p-2 rounded-full text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
               <Bell className="h-5 w-5" />
             </button>
-            
             <div className="flex items-center space-x-3">
               <div className="flex items-center space-x-2">
                 {user?.avatar ? (
@@ -52,7 +47,6 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick, showMobileMenu = false }) 
                   <div className="text-xs text-gray-500 capitalize">{user?.role}</div>
                 </div>
               </div>
-              
               <button
                 onClick={logout}
                 className="p-2 rounded-full text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
