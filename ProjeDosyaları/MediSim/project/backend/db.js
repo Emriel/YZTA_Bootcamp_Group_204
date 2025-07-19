@@ -10,6 +10,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
   }
 });
 
+// Users tablosu
 db.serialize(() => {
   db.run(`
     CREATE TABLE IF NOT EXISTS users (
@@ -21,5 +22,28 @@ db.serialize(() => {
   `);
 });
 
+db.serialize(() => {
+  db.run(`
+    CREATE TABLE IF NOT EXISTS cases (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      title TEXT NOT NULL,
+      description TEXT,
+      difficulty TEXT,
+      category TEXT,
+      duration INTEGER,
+      symptoms TEXT,
+      temperature TEXT,
+      blood_pressure TEXT,
+      heart_rate TEXT,
+      respiratory_rate TEXT,
+      patient_age INTEGER,
+      patient_gender TEXT,
+      medical_history TEXT,
+      current_medications TEXT,
+      tags TEXT,
+      created_at TEXT DEFAULT (datetime('now', 'localtime'))
+    )
+  `);
+});
 
 module.exports = db;

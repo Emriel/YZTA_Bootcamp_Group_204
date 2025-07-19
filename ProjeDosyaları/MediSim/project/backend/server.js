@@ -3,7 +3,7 @@ const cors = require('cors');
 const db = require('./db');
 const app = express();
 
-app.use(cors()); // ✅ frontend erişimi için şart
+app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
@@ -50,6 +50,60 @@ app.post('/login', (req, res) => {
       }
     }
   );
+});
+
+// Vaka ekleme 
+app.post('/cases', (req, res) => {
+  console.log(">>> Gelen vaka verisi:", req.body);
+  const {
+    title,
+    description,
+    difficulty,
+    category,
+    duration,
+    symptoms,
+    temperature,
+    blood_pressure,
+    heart_rate,
+    respiratory_rate,
+    patient_age,
+    patient_gender,
+    medical_history,
+    current_medications,
+    tags
+  } = req.body;
+
+  const query = `
+    INSERT INTO cases (
+      title, description, difficulty, category, duration, symptoms,
+      temperature, blood_pressure, heart_rate, respiratory_rate,
+      patient_age, patient_gender, medical_history, current_medications, tags
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  `;
+
+  const values = [
+    title, description, difficulty, category, duration, symptoms,
+    temperature, blood_pressure, heart_rate, respiratory_rate,
+    patient_age, patient_gender, medical_history, current_medications, tags
+  ];
+
+  db.run(query, values, function (err) {
+    if (err) {
+      console.error("Vaka eklenirken hata:", err.message);
+      return res.status(500).json({ error: err.message });
+    }
+    res.status(201).json({ message: "Vaka başarıyla eklendi", id: this.lastID });
+  });
+});
+
+// Tüm vakaları listeleme
+app.get('/cases', (req, res) => {
+  db.all(`SELECT * FROM cases`, (err, rows) => {
+    if (err) {
+      return res.status(500).send({ message: err.message });
+    }
+    res.send(rows);
+  });
 });
 
 const PORT = 3001;

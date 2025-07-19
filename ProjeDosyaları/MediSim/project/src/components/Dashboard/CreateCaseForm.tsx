@@ -39,36 +39,54 @@ const CreateCaseForm: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!user) return;
-    const newCase: Case = {
-      id: Math.random().toString(36).substr(2, 9),
-      title,
-      description,
-      difficulty,
-      category,
-      duration,
-      symptoms: symptoms.split(',').map(s => s.trim()).filter(Boolean),
-      vitals: { ...vitals },
-      patientInfo: {
-        ...patientInfo,
-        age: Number(patientInfo.age),
-        gender: patientInfo.gender as 'male' | 'female',
-        medicalHistory: (patientInfo.medicalHistory as any as string).split(',').map((s: string) => s.trim()).filter(Boolean),
-        currentMedications: (patientInfo.currentMedications as any as string).split(',').map((s: string) => s.trim()).filter(Boolean),
-      },
-      createdBy: user.id,
-      createdAt: new Date().toISOString(),
-      tags: tags.split(',').map(s => s.trim()).filter(Boolean),
-    };
-    console.log('Created case:', newCase);
-    setSuccess(true);
-    setTimeout(() => {
-      setSuccess(false);
-      onClose();
-    }, 1500);
-  };
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  if (!user) return;
+
+  // Nested yapıdan düz yapıya dönüştürme
+  const flatCase = {
+  title,
+  description,
+  difficulty,
+  category,
+  duration,
+  symptoms: symptoms.split(',').map(s => s.trim()).join(','),
+  temperature: vitals.temperature,
+  blood_pressure: vitals.bloodPressure,
+  heart_rate: vitals.heartRate,
+  respiratory_rate: vitals.respiratoryRate,
+  patient_age: Number(patientInfo.age),
+  patient_gender: patientInfo.gender,
+  medical_history: (patientInfo.medicalHistory as any as string).split(',').map(s => s.trim()).join(','),
+  current_medications: (patientInfo.currentMedications as any as string).split(',').map(s => s.trim()).join(','),
+  tags: tags.split(',').map(s => s.trim()).join(','),
+};
+
+
+  try {
+    const response = await fetch('http://localhost:3001/cases', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(flatCase),
+});
+
+
+    if (response.ok) {
+      setSuccess(true);
+      setTimeout(() => {
+        setSuccess(false);
+        onClose();
+      }, 1500);
+    } else {
+      const error = await response.json();
+      alert("Hata: " + error.message);
+    }
+  } catch (error) {
+    alert("Bir hata oluştu: " + error);
+  }
+};
+
+
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
