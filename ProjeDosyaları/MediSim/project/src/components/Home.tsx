@@ -14,8 +14,8 @@ const Home: React.FC<HomeProps> = ({ onLoginClick, onRegisterClick }: HomeProps)
           MediSim
         </div>
         <div className="flex gap-3">
-          <button onClick={onLoginClick} className="bg-blue-600 text-white px-5 py-2 rounded-lg font-semibold shadow hover:bg-blue-700 transition">Giriş Yap</button>
-          <button onClick={onRegisterClick} className="bg-gray-200 text-blue-700 px-5 py-2 rounded-lg font-semibold shadow hover:bg-gray-300 transition">Kayıt Ol</button>
+          <button onClick={onLoginClick} className="bg-blue-600 text-white px-5 py-2 rounded-lg font-semibold shadow hover:bg-blue-700 transition">Sign In</button>
+          <button onClick={onRegisterClick} className="bg-gray-200 text-blue-700 px-5 py-2 rounded-lg font-semibold shadow hover:bg-gray-300 transition">Sign Up</button>
         </div>
       </header>
 
