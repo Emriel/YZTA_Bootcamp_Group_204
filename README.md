@@ -223,3 +223,77 @@ MediSim'in hedef kitlesi başta tıp fakültesi öğrencileri olmak üzere, klin
 <hr />
 
 </body>
+
+<!-- SPRINT 2 TEMPLATE -->
+<details>
+<summary><h1>Sprint 2</h1></summary>
+
+<details>
+<summary><h3>App Screenshots</h3></summary>
+<table style="width: 100%;">
+  <tr>
+    <td style="text-align: center;" colspan="2"><h4>Chatbot Arayüzü</h4></td>
+  </tr>
+  <tr>
+    <td><img src="readmeFiles/sprintTwo/screenshots/chatbot1.png" style="max-width: 100%; height: auto;"></td>
+    <td><img src="readmeFiles/sprintTwo/screenshots/chatbot2.png" style="max-width: 100%; height: auto;"></td>
+  </tr>
+  <tr>
+    <td style="text-align: center;" colspan="2"><h4>Eğitmen Paneli</h4></td>
+  </tr>
+  <tr>
+    <td><img src="readmeFiles/sprintTwo/screenshots/instructor1.png" style="max-width: 100%; height: auto;"></td>
+    <td><img src="readmeFiles/sprintTwo/screenshots/instructor2.png" style="max-width: 100%; height: auto;"></td>
+  </tr>
+</table>
+</details>
+
+<details>
+<summary><h3>Sprint Board</h3></summary>
+<img src="readmeFiles/sprintTwo/trello_board.png" style="max-width: 100%; height: auto;">
+</details>
+
+<details>
+<summary><h3>Daily Scrum Kayıtları</h3></summary>
+<img src="readmeFiles/sprintTwo/daily_scrum1.png" style="max-width: 100%; height: auto;">
+<img src="readmeFiles/sprintTwo/daily_scrum2.png" style="max-width: 100%; height: auto;">
+</details>
+
+<h3>Sprint Notları</h3>
+<ul>
+  <li><strong>Gemini LLM Entegrasyonu:</strong> Yapay zeka sohbet botu başarıyla sisteme entegre edildi. Kullanıcılar web arayüzü üzerinden gerçek zamanlı etkileşim kurabiliyor.</li>
+  <li><strong>Arayüz İyileştirmeleri:</strong>
+    <ul>
+      <li>Ana sayfa modern bir tasarımla yenilendi</li>
+      <li>Yeni logo ve ikonlarla görsel kimlik güçlendirildi</li>
+      <li>Giriş/Kayıt sayfalarındaki hatalar giderildi</li>
+    </ul>
+  </li>
+  <li><strong>Veritabanı Optimizasyonu:</strong> PostgreSQL yerine SQLite'a geçiş yapıldı</li>
+  <li><strong>Eğitmen Paneli:</strong> Özel arayüz üzerinden vaka oluşturma özelliği eklendi</li>
+</ul>
+
+<h3>Sprint Hedef Puanı:</h3>
+<p><strong>100 puan</strong> (Toplam 300 puan üzerinden)</p>
+
+<h3>Product Backlog URL:</h3>
+<p><a href="https://trello.com/b/pUqcwSsc/yzta-bootcamp" target="_blank">Trello Backlog</a></p>
+
+<h3>Sprint Review</h3>
+<ul>
+  <li>Yapay zeka sohbet botu testleri başarıyla tamamlandı</li>
+  <li>.............</li>
+  <li>SQLite geçişi veri işlemlerini basitleştirdi</li>
+</ul>
+
+<h3>Sprint Review Katılımcıları:</h3>
+<p>Elif Kartal, Emirhan Toprak, Ömer Biltekin, Şevval Demir, Umut Sönmez</p>
+
+<h3>Sprint Retrospective</h3>
+<ul>
+  <li><strong>İyi Yönler:</strong> Takım içi iletişim ve görev dağılımı verimliydi</li>
+  <li><strong>Geliştirilecek Alanlar:</strong> Entegrasyon testleri için daha fazla zaman ayrılmalı</li>
+  <li><strong>Önemli Çıkarımlar:</strong> SQLite geçişi beklenenden hızlı tamamlandı</li>
+</ul>
+
+</details>
