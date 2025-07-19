@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { mockCases } from '../../data/mockData';
 import { 
@@ -11,9 +11,11 @@ import {
   BarChart3,
   Activity
 } from 'lucide-react';
+import CreateCaseForm from './CreateCaseForm';
 
 const InstructorDashboard: React.FC = () => {
   const { user } = useAuth();
+  const [showCreateCase, setShowCreateCase] = useState(false);
 
   const stats = [
     { label: 'Active Students', value: 47, icon: Users, color: 'bg-blue-500' },
@@ -35,11 +37,15 @@ const InstructorDashboard: React.FC = () => {
           <h1 className="text-2xl font-bold text-gray-900">Instructor Dashboard</h1>
           <p className="text-gray-600">Monitor student progress and manage cases</p>
         </div>
-        <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 flex items-center space-x-2">
+        <button
+          className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 flex items-center space-x-2"
+          onClick={() => setShowCreateCase(true)}
+        >
           <Plus className="h-4 w-4" />
           <span>Create Case</span>
         </button>
       </div>
+      {showCreateCase && <CreateCaseForm onClose={() => setShowCreateCase(false)} />}
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

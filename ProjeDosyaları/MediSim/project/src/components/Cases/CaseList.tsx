@@ -3,6 +3,7 @@ import { mockCases } from '../../data/mockData';
 import CaseCard from './CaseCard';
 import { Search, Filter, Plus } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
+import CreateCaseForm from '../Dashboard/CreateCaseForm';
 
 interface CaseListProps {
   onStartCase: (caseId: string) => void;
@@ -13,6 +14,7 @@ const CaseList: React.FC<CaseListProps> = ({ onStartCase }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedDifficulty, setSelectedDifficulty] = useState('all');
+  const [showCreateCase, setShowCreateCase] = useState(false);
 
   const categories = ['all', ...new Set(mockCases.map(c => c.category))];
   const difficulties = ['all', 'beginner', 'intermediate', 'advanced'];
@@ -41,10 +43,16 @@ const CaseList: React.FC<CaseListProps> = ({ onStartCase }) => {
           </p>
         </div>
         {user?.role === 'instructor' && (
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 flex items-center space-x-2">
-            <Plus className="h-4 w-4" />
-            <span>Create New Case</span>
-          </button>
+          <>
+            <button
+              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 flex items-center space-x-2"
+              onClick={() => setShowCreateCase(true)}
+            >
+              <Plus className="h-4 w-4" />
+              <span>Create New Case</span>
+            </button>
+            {showCreateCase && <CreateCaseForm onClose={() => setShowCreateCase(false)} />}
+          </>
         )}
       </div>
 
