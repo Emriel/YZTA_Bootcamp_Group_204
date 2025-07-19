@@ -16,7 +16,7 @@ export interface PatientResponse {
 }
 
 export class GeminiPatientSimulator {
-  private model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash:generateContent' });
+  private model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash-exp' });
   private conversationHistory: string[] = [];
   private case: Case | null = null;
 
