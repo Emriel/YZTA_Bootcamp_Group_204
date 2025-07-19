@@ -97,27 +97,6 @@ const StudentDashboard: React.FC = () => {
         </div>
 
         <div className="space-y-6">
-          {/* Performance Chart */}
-          <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">Performance by Category</h2>
-            <div className="space-y-3">
-              {Object.entries(mockPerformance.categoryScores).map(([category, score]) => (
-                <div key={category}>
-                  <div className="flex justify-between text-sm mb-1">
-                    <span className="text-gray-600">{category}</span>
-                    <span className="font-medium">{score}%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div 
-                      className="bg-blue-600 h-2 rounded-full transition-all duration-300"
-                      style={{ width: `${score}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
           {/* Recent Achievement */}
           <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">Latest Achievement</h2>

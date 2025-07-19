@@ -15,7 +15,8 @@ const AppContent: React.FC = () => {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [currentCaseId, setCurrentCaseId] = useState<string | null>(null);
-  const [showAuth, setShowAuth] = useState(false);
+  // showAuth'u string olarak değiştiriyorum: null | 'login' | 'register'
+  const [showAuth, setShowAuth] = useState<null | 'login' | 'register'>(null);
 
   const handleStartCase = (caseId: string) => {
     setCurrentCaseId(caseId);
@@ -31,9 +32,13 @@ const AppContent: React.FC = () => {
 
   if (!isAuthenticated) {
     if (!showAuth) {
-      return <Home onLoginClick={() => setShowAuth(true)} onRegisterClick={() => setShowAuth(true)} />;
+      return <Home 
+        onLoginClick={() => setShowAuth('login')} 
+        onRegisterClick={() => setShowAuth('register')} 
+      />;
     }
-    return <AuthForm />;
+    // showAuth 'login' ise isLogin true, 'register' ise false
+    return <AuthForm isLoginDefault={showAuth === 'login'} />;
   }
 
   const renderContent = () => {

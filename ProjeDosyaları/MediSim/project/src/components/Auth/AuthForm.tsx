@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { Heart, Mail, Lock, User, Eye, EyeOff } from 'lucide-react';
 
-const AuthForm: React.FC = () => {
-  const [isLogin, setIsLogin] = useState(true);
+interface AuthFormProps {
+  isLoginDefault?: boolean;
+}
+
+const AuthForm: React.FC<AuthFormProps> = ({ isLoginDefault = true }) => {
+  const [isLogin, setIsLogin] = useState(isLoginDefault);
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -42,9 +46,7 @@ const AuthForm: React.FC = () => {
       <div className="max-w-md w-full space-y-8">
         <div className="text-center">
           <div className="flex items-center justify-center mb-6">
-            <div className="flex items-center justify-center w-16 h-16 bg-blue-600 rounded-full">
-              <Heart className="h-8 w-8 text-white" />
-            </div>
+            <img src="/medisimlogo.png" alt="MediSim Logo" className="w-20 h-20 object-contain rounded-full" />
           </div>
           <h2 className="text-3xl font-bold text-gray-900">
             Welcome to MediSim
