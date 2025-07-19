@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
-import { Heart, Mail, Lock, User, Eye, EyeOff } from 'lucide-react';
+import { Heart, Mail, Lock, User, Eye, EyeOff, Home } from 'lucide-react';
 
 interface AuthFormProps {
   isLoginDefault?: boolean;
@@ -19,6 +19,10 @@ const AuthForm: React.FC<AuthFormProps> = ({ isLoginDefault = true }) => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   
   const { login, register, isLoading } = useAuth();
+
+  const handleGoHome = () => {
+    window.location.href = '/';
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -45,6 +49,17 @@ const AuthForm: React.FC<AuthFormProps> = ({ isLoginDefault = true }) => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50 flex items-center justify-center p-4">
       <div className="max-w-md w-full space-y-8">
+        {/* Home Button */}
+        <div className="flex justify-end">
+          <button
+            onClick={handleGoHome}
+            className="inline-flex items-center px-4 py-2 text-sm font-medium text-blue-600 bg-white border border-blue-200 rounded-lg shadow-sm hover:bg-blue-50 hover:border-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200"
+          >
+            <Home className="w-4 h-4 mr-2" />
+            Back to Home
+          </button>
+        </div>
+        
         <div className="text-center">
           <div className="flex items-center justify-center mb-6">
             <img src="/medisimlogoDAR.png" alt="MediSim Logo" className="w-auto h-12 object-contain rounded-full" />
