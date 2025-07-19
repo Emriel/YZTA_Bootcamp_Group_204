@@ -13,8 +13,7 @@ const Home: React.FC<HomeProps> = ({ onLoginClick, onRegisterClick }) => {
       <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-lg">
         <div className="max-w-6xl mx-auto px-4 flex h-16 items-center justify-between">
           <div className="flex items-center space-x-2">
-            <img src="/medisimlogo.png" alt="MediSim Logo" className="w-16 h-16 rounded-lg object-contain bg-blue-600 p-1" />
-            
+            <img src="/medisimlogoDAR.png" alt="MediSim Logo" className="h-10 w-auto" />
           </div>
           
           <div className="flex items-center space-x-3">
