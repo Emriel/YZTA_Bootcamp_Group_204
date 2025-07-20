@@ -231,32 +231,56 @@ MediSim'in hedef kitlesi başta tıp fakültesi öğrencileri olmak üzere, klin
 <details>
 <summary><h3>App Screenshots</h3></summary>
 <table style="width: 100%;">
-  <tr>
-    <td style="text-align: center;" colspan="2"><h4>Chatbot Arayüzü</h4></td>
+   <tr>
+    <td style="text-align: center;" colspan="3"><h2>Homepage</h2></td>
   </tr>
   <tr>
-    <td><img src="readmeFiles/sprintTwo/screenshots/chatbot1.png" style="max-width: 100%; height: auto;"></td>
-    <td><img src="readmeFiles/sprintTwo/screenshots/chatbot2.png" style="max-width: 100%; height: auto;"></td>
+    <td><img src="readmeFiles/Sprint2/HomePage.png" style="max-width: 100%; height: auto;"></td>
   </tr>
   <tr>
-    <td style="text-align: center;" colspan="2"><h4>Eğitmen Paneli</h4></td>
+    <td style="text-align: center;" colspan="3"><h2>Login & Register Pages</h2></td>
   </tr>
   <tr>
-    <td><img src="readmeFiles/sprintTwo/screenshots/instructor1.png" style="max-width: 100%; height: auto;"></td>
-    <td><img src="readmeFiles/sprintTwo/screenshots/instructor2.png" style="max-width: 100%; height: auto;"></td>
+    <td><img src="readmeFiles/Sprint2/Login page.png" style="max-width: 100%; height: auto;"></td>
+    <td><img src="readmeFiles/Sprint2/sign up page.png" style="max-width: 100%; height: auto;"></td>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: center;"><h2>Student Pages</h2></td>
+  </tr>
+  <tr>
+    <td><img src="readmeFiles/sprintOne/screenshots/dashboard.png" style="max-width: 100%; height: auto;"></td>
+    <td><img src="readmeFiles/Sprint2/Project Student/case.png" style="max-width: 100%; height: auto;"></td>
+    <td><img src="readmeFiles/Sprint2/Project Student/WhatsApp Görsel 2025-07-20 saat 21.18.56_ca0f85d1.jpg" style="max-width: 100%; height: auto;"></td>
+    <td><img src="readmeFiles/Sprint2/Project Student/settings.png" style="max-width: 100%; height: auto;"></td>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: center;"><h2>Instructor Pages</h2></td>
+  </tr>
+  <tr>
+    <td><img src="readmeFiles/Sprint2/Project Instructor/Dashboard.png" style="max-width: 100%; height: auto;"></td>
+    <td><img src="readmeFiles/Sprint2/Project Instructor/Create Case.png" style="max-width: 100%; height: auto;"></td>
+    <td><img src="readmeFiles/Sprint2/Project Instructor/manage_case.png" style="max-width: 100%; height: auto;"></td>
   </tr>
 </table>
 </details>
 
 <details>
 <summary><h3>Sprint Board</h3></summary>
-<img src="readmeFiles/sprintTwo/trello_board.png" style="max-width: 100%; height: auto;">
+<img src="readmeFiles/Sprint2/Sprint2-Trello.png" style="max-width: 100%; height: auto;">
 </details>
 
 <details>
 <summary><h3>Daily Scrum Kayıtları</h3></summary>
-<img src="readmeFiles/sprintTwo/daily_scrum1.png" style="max-width: 100%; height: auto;">
-<img src="readmeFiles/sprintTwo/daily_scrum2.png" style="max-width: 100%; height: auto;">
+<img src="readmeFiles/Sprint2/DailyScrum/Toplantı.png" style="max-width: 100%; height: auto;">
+<img src="readmeFiles/Sprint2/DailyScrum/1.png" style="max-width: 100%; height: auto;">
+<img src="readmeFiles/Sprint2/DailyScrum/2.png" style="max-width: 100%; height: auto;">  
+<img src="readmeFiles/Sprint2/DailyScrum/3.png" style="max-width: 100%; height: auto;">  
+<img src="readmeFiles/Sprint2/DailyScrum/4.png" style="max-width: 100%; height: auto;">  
+<img src="readmeFiles/Sprint2/DailyScrum/5.png" style="max-width: 100%; height: auto;">  
+<img src="readmeFiles/Sprint2/DailyScrum/6.png" style="max-width: 100%; height: auto;">  
+<img src="readmeFiles/Sprint2/DailyScrum/7.png" style="max-width: 100%; height: auto;">  
+<img src="readmeFiles/Sprint2/DailyScrum/8.png" style="max-width: 100%; height: auto;">  
+<img src="readmeFiles/Sprint2/DailyScrum/9.png" style="max-width: 100%; height: auto;">  
 </details>
 
 <h3>Sprint Notları</h3>
@@ -269,21 +293,21 @@ MediSim'in hedef kitlesi başta tıp fakültesi öğrencileri olmak üzere, klin
       <li>Giriş/Kayıt sayfalarındaki hatalar giderildi</li>
     </ul>
   </li>
-  <li><strong>Veritabanı Optimizasyonu:</strong> PostgreSQL yerine SQLite'a geçiş yapıldı</li>
-  <li><strong>Eğitmen Paneli:</strong> Özel arayüz üzerinden vaka oluşturma özelliği eklendi</li>
+  <li><strong>Veritabanı Optimizasyonu:</strong> Ekip üyeleri daha aşina olduğu için PostgreSQL'den SQLite'a geçildi.</li>
+  <li><strong>Eğitmen Paneli:</strong> Eğitmen olarak oturum açmış kullanıcılara özel dashboard üzerinden yeni vaka oluşturma özelliği eklendi</li>
 </ul>
 
-<h3>Sprint Hedef Puanı:</h3>
-<p><strong>100 puan</strong> (Toplam 300 puan üzerinden)</p>
+<b>Expected Point Completion within Sprint:</b> 100 puan <br>
+<b>Point Completion Logic:</b> Puanlama mantığı ilk sprint'te belirlendiği gibidir ve bu sprint'te de hedeflenen puana ulaşılmıştır.<br>
 
 <h3>Product Backlog URL:</h3>
 <p><a href="https://trello.com/b/pUqcwSsc/yzta-bootcamp" target="_blank">Trello Backlog</a></p>
 
 <h3>Sprint Review</h3>
 <ul>
-  <li>Yapay zeka sohbet botu testleri başarıyla tamamlandı</li>
-  <li>.............</li>
-  <li>SQLite geçişi veri işlemlerini basitleştirdi</li>
+  <li>Gemini API bağlantısı başarıyla gerçekleştirildi</li>
+  <li>Arayüzde kullanılmayacak yerler kaldırıldı</li>
+  <li>Veri tabanı teknolojisinde değişiklik kararı alındı</li>
 </ul>
 
 <h3>Sprint Review Katılımcıları:</h3>
