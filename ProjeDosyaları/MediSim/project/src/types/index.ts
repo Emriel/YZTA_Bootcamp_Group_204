@@ -17,22 +17,18 @@ export interface Case {
   difficulty: 'beginner' | 'intermediate' | 'advanced';
   category: string;
   duration: number; // in minutes
-  symptoms: string[];
-  vitals: {
-    temperature: string;
-    bloodPressure: string;
-    heartRate: string;
-    respiratoryRate: string;
-  };
-  patientInfo: {
-    age: number;
-    gender: 'male' | 'female';
-    medicalHistory: string[];
-    currentMedications: string[];
-  };
-  createdBy: string;
-  createdAt: string;
-  tags: string[];
+  symptoms: string; // comma-separated string
+  temperature: string;
+  blood_pressure: string;
+  heart_rate: string;
+  respiratory_rate: string;
+  patient_age: number;
+  patient_gender: 'male' | 'female';
+  medical_history: string; // comma-separated string
+  current_medications: string; // comma-separated string
+  tags: string; // comma-separated string
+  createdBy?: string;
+  createdAt?: string;
 }
 
 export interface CaseSession {
