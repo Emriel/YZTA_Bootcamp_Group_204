@@ -459,9 +459,14 @@ MediSim'in hedef kitlesi başta tıp fakültesi öğrencileri olmak üzere, klin
     <small>API anahtarınızı <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a>'dan ücretsiz alabilirsiniz.</small>
   </li>
   
-  <li><b>Uygulamayı Başlatın</b>
+<li>
+  <b>Uygulamayı Başlatın</b><br>
+  Komutu çalıştırdıktan sonra, terminalde görünen port numarası üzerinden uygulamanın front-end arayüzüne erişim sağlayabilirsiniz.
+  <div style="margin-top: 5px; margin-left: 15px;">
     <pre><code>npm run dev</code></pre>
-  </li>
+  </div>
+</li>
+
   
 
   <li><b>Backend'i Başlatın:</b>
