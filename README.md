@@ -352,29 +352,20 @@ MediSim'in hedef kitlesi başta tıp fakültesi öğrencileri olmak üzere, klin
 <img src="readmeFiles/Sprint3/DailyScrum/3.png" style="max-width: 100%; height: auto;">
 </details>
 
-<h3>Sprint 3 Geliştirme Notları</h3>
-
-<div class="sprint-section">
-  <h4>• Çok Dilli Destek ve Klinik Yönetimi</h4>
-  <div style="padding-left: 20px;">
-    <p>Uygulamamıza Latince–İngilizce çeviri özelliği entegre edilerek, hastalık terimleri ve medikal terminolojiler arasında dinamik bir geçiş sağlandı. Kullanıcıların yazdığı hastalık isimleri üzerinden çalışan sistem, hem terim çevirisini gerçekleştirmekte hem de kenarda ilgili kelimenin etimolojisine dair bilgiler sunmaktadır. Bu sayede kullanıcılar yalnızca Latince karşılıkları öğrenmekle kalmayıp, terimlerin kökenine dair bilgiye de kolaylıkla ulaşabilmektedir.</p>
-    <p>Klinik bazlı vaka yönetim sistemini yeniden yapılandırdık; artık öğrenciler doğrudan hastalık seçmek yerine ilgili klinik üzerinden vakalara yönlendiriliyor. Bu sayede daha gerçekçi klinik senaryoları oluştururken, yeni entegre ettiğimiz puanlama sistemiyle performans değerlendirmesi yapabiliyoruz.</p>
-  </div>
-</div>
-
-<div class="sprint-section">
-  <h4>• Veritabanı ve Eğitim Modülleri</h4>
-  <div style="padding-left: 20px;">
-    <p>Veritabanı tarafında vaka tablosunu genişleterek daha detaylı veri saklama imkanı oluşturduk. Yaptığımız yapısal iyileştirmelerle veri tutarlılığını artırırken sistem performansını da optimize ettik. Eğitim içeriklerini zenginleştirmek amacıyla "Tıbbi Günün Kelimesi" modülünü geliştirdik. Bu modül sayesinde kullanıcılar günlük medikal terimler öğrenip mini quizlerle bilgilerini test edebiliyor, böylece etkileşimli bir öğrenme deneyimi yaşıyorlar.</p>
-  </div>
-</div>
-
-<div class="sprint-section">
-  <h4>• Arayüz İyileştirmeleri ve Testler</h4>
-  <div style="padding-left: 20px;">
-    <p>Kullanıcı arayüzünde kapsamlı bir temizlik yaparak kullanılmayan bileşenleri kaldırdık, yazı tipi ve renk şemasını gözden geçirerek daha tutarlı bir görünüm sağladık. Sprint boyunca form girişleri, vaka başlatma gibi kritik işlevleri edge-case senaryolarıyla test ederek tespit ettiğimiz küçük hataları düzelttik.</p>
-  </div>
-</div>
+<h3>Sprint Notları</h3>
+<ul>
+  <li><strong>Latince-İngilizce Terim Çeviri Özelliği Eklendi:</strong> Doktorlarımız ve doktor adaylarımızın latincede öğrendikleri kelimeleri ara ara hatırlamak isterlerse bilgi tazeleme yapabilecekleri "Medicine Terms" sayfası eklendi.</li>
+  <li><strong>Arayüz İyileştirmeleri:</strong>
+    <ul>
+      <li>Öğrenci ana sayfasında kullanılmayan özellikler kaldırıldı</li>
+      <li>Öğrenci ana sayfasında çalışmayan tuşların işlevleri ayarlandı</li>
+      <li>Eğitmen sayfasında kullanılmayan özellikler kaldırıldı</li>
+      <li>Hem eğitmen hem de öğrenci sayfasına sağlıkla ilgili özlü söz gösterilen bir alan eklendi</li>
+    </ul>
+  </li>
+  <li><strong>Veritabanı Optimizasyonu:</strong> Frontend ve Backend arasındaki bağlantı sorunları giderildi ve gerekli kısımlar veri tabanına bağlandı</li>
+  <li><strong>Örnek Veriler Eklendi:</strong> Hasta durumuyla ilgili örnek veriler oluşturuldu ve veri tabanına eklendi</li>
+</ul>
 
 <div class="sprint-section">
   <h4>Gelecek Planları</h4>
@@ -389,19 +380,14 @@ MediSim'in hedef kitlesi başta tıp fakültesi öğrencileri olmak üzere, klin
 <h3>Product Backlog URL:</h3>
 <p><a href="https://trello.com/b/pUqcwSsc/yzta-bootcamp" target="_blank">Trello Backlog</a></p>
 
-<h3>Sprint Review</h3>
-<ul>
-  <li>Latince–İngilizce çeviri özelliği başarıyla entegre edildi.</li>
-  <li>Klinik temelli vaka ayrımı kullanıcı arayüzünde etkili şekilde çalışıyor.</li>
-</ul>
-
 <h3>Sprint Review Katılımcıları:</h3>
 <p>Elif Kartal, Emirhan Toprak, Ömer Biltekin, Şevval Demir, Umut Sönmez</p>
 
 <h3>Sprint Retrospective</h3>
 <ul>
-  <li><strong>İyi Yönler:</strong> Tüm işler planlandığı gibi zamanında tamamlandı. Takım içi iş birliği oldukça uyumluydu.</li>
-  <li><strong>Önemli Çıkarımlar:</strong> Uygulama kararlı ve hatasız şekilde çalışmaktadır. Bu stabilite, sonraki sürümler için sağlam bir temel oluşturuyor.</li>
+  <li><strong>İyi Yönler:</strong> Takım içi iletişim oldukça güçlüydü. Bu sayede beklenmeyen problemlere hızlı karşılık verilebildi.</li>
+  <li><strong>Kötü Yönler:</strong> Tüm takım üyelerinin yoğunluk dönemine geldiği için beklenmedik aksamalar yaşandı.</li> 
+  <li><strong>Önemli Çıkarımlar:</strong> Gelecekte kimlerin ne zaman çalışabileceği daha iyi planlanabilir. Özellikle önceden bilinen yoğunluklar varsa bu yoğunluklar daha iyi bir şekilde planlanabilir. </li>
 </ul>
 
 </details>
