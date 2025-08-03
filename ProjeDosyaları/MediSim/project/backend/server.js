@@ -125,6 +125,19 @@ app.get('/cases/:id', (req, res) => {
   );
 });
 
+// Category'lere göre case sayılarını getirme
+app.get('/cases-by-category', (req, res) => {
+  db.all(
+    `SELECT category, COUNT(*) as count FROM cases GROUP BY category ORDER BY count DESC`,
+    (err, rows) => {
+      if (err) {
+        return res.status(500).json({ error: err.message });
+      }
+      res.json(rows);
+    }
+  );
+});
+
 const PORT = 3001;
 app.listen(PORT, () => {
   console.log(`Sunucu http://localhost:${PORT} adresinde çalışıyor`);

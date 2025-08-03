@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
-import { mockCases } from '../../data/mockData';
+import { Case } from '../../types';
 import { 
   Users, 
   FileText, 
@@ -9,14 +9,21 @@ import {
   BookOpen, 
   Plus,
   BarChart3,
-  Activity,
   Heart
 } from 'lucide-react';
 import CreateCaseForm from './CreateCaseForm';
 
-const InstructorDashboard: React.FC = () => {
+interface InstructorDashboardProps {
+  onNavigateToTab?: (tab: string) => void;
+}
+
+const InstructorDashboard: React.FC<InstructorDashboardProps> = ({ onNavigateToTab }) => {
   const { user } = useAuth();
   const [showCreateCase, setShowCreateCase] = useState(false);
+  const [recentCases, setRecentCases] = useState<Case[]>([]);
+  const [isLoadingCases, setIsLoadingCases] = useState(true);
+  const [categoryStats, setCategoryStats] = useState<{category: string, count: number}[]>([]);
+  const [isLoadingStats, setIsLoadingStats] = useState(true);
 
   // Health quotes (Latin + English meaning)
   const healthQuotes = [
@@ -48,11 +55,44 @@ const InstructorDashboard: React.FC = () => {
     return () => clearInterval(interval);
   }, [healthQuotes.length]);
 
-  const recentActivity = [
-    { student: 'Alex Chen', case: 'Acute Chest Pain', score: 85, time: '2 hours ago' },
-    { student: 'Sarah Johnson', case: 'Pediatric Fever', score: 92, time: '3 hours ago' },
-    { student: 'Michael Brown', case: 'Chronic Abdominal Pain', score: 78, time: '5 hours ago' },
-  ];
+  useEffect(() => {
+    fetchRecentCases();
+    fetchCategoryStats();
+  }, []);
+
+  const fetchRecentCases = async () => {
+    try {
+      setIsLoadingCases(true);
+      const response = await fetch('http://localhost:3001/cases');
+      if (response.ok) {
+        const cases = await response.json();
+        setRecentCases(cases.slice(0, 3)); // Show only first 3 popular cases
+      } else {
+        console.error('Failed to fetch cases');
+      }
+    } catch (error) {
+      console.error('Error fetching cases:', error);
+    } finally {
+      setIsLoadingCases(false);
+    }
+  };
+
+  const fetchCategoryStats = async () => {
+    try {
+      setIsLoadingStats(true);
+      const response = await fetch('http://localhost:3001/cases-by-category');
+      if (response.ok) {
+        const stats = await response.json();
+        setCategoryStats(stats);
+      } else {
+        console.error('Failed to fetch category stats');
+      }
+    } catch (error) {
+      console.error('Error fetching category stats:', error);
+    } finally {
+      setIsLoadingStats(false);
+    }
+  };
 
   return (
     <div className="space-y-3">
@@ -112,63 +152,75 @@ const InstructorDashboard: React.FC = () => {
           <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">Case Library</h2>
             <div className="space-y-3">
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-600">Cardiology</span>
-                <span className="font-medium">8 cases</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-600">Pediatrics</span>
-                <span className="font-medium">6 cases</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-600">Emergency</span>
-                <span className="font-medium">5 cases</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-600">Gastroenterology</span>
-                <span className="font-medium">4 cases</span>
-              </div>
+              {isLoadingStats ? (
+                <div className="text-center py-4">
+                  <div className="inline-block animate-spin rounded-full h-4 w-4 border-b-2 border-blue-600"></div>
+                  <p className="text-gray-500 text-sm mt-2">Loading statistics...</p>
+                </div>
+              ) : categoryStats.length > 0 ? (
+                categoryStats.map((stat, index) => (
+                  <div key={index} className="flex justify-between items-center">
+                    <span className="text-sm text-gray-600 capitalize">{stat.category}</span>
+                    <span className="font-medium">{stat.count} case{stat.count !== 1 ? 's' : ''}</span>
+                  </div>
+                ))
+              ) : (
+                <div className="text-center py-4">
+                  <p className="text-gray-500 text-sm">No cases found</p>
+                </div>
+              )}
             </div>
           </div>
         </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-1">
-        {/* Recent Student Activity */}
+        {/* Popular Cases */}
         <div className="lg:col-span-2">
           <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg font-semibold text-gray-900">Recent Student Activity</h2>
-              <button className="text-blue-600 hover:text-blue-800 text-sm font-medium">
+              <h2 className="text-lg font-semibold text-gray-900">Popular Cases</h2>
+              <button 
+                className="text-blue-600 hover:text-blue-800 text-sm font-medium"
+                onClick={() => onNavigateToTab?.('cases')}
+              >
                 View All
               </button>
             </div>
             <div className="space-y-4">
-              {recentActivity.map((activity, index) => (
-                <div key={index} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <Activity className="h-5 w-5 text-blue-600" />
+              {isLoadingCases ? (
+                <div className="text-center py-4">
+                  <div className="inline-block animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600"></div>
+                  <p className="text-gray-500 mt-2">Loading cases...</p>
+                </div>
+              ) : recentCases.length > 0 ? (
+                recentCases.map((case_) => (
+                  <div key={case_.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                        <BookOpen className="h-5 w-5 text-blue-600" />
+                      </div>
+                      <div>
+                        <h3 className="font-medium text-gray-900">{case_.title}</h3>
+                        <p className="text-sm text-gray-500">{case_.category} • {case_.duration} min</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-medium text-gray-900">{activity.student}</h3>
-                      <p className="text-sm text-gray-500">{activity.case}</p>
-                    </div>
-                  </div>
-                  <div className="text-right">
                     <div className="flex items-center space-x-2">
                       <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                        activity.score >= 90 ? 'bg-green-100 text-green-800' :
-                        activity.score >= 70 ? 'bg-yellow-100 text-yellow-800' :
+                        case_.difficulty === 'beginner' ? 'bg-green-100 text-green-800' :
+                        case_.difficulty === 'intermediate' ? 'bg-yellow-100 text-yellow-800' :
                         'bg-red-100 text-red-800'
                       }`}>
-                        {activity.score}%
+                        {case_.difficulty}
                       </span>
                     </div>
-                    <p className="text-xs text-gray-500 mt-1">{activity.time}</p>
                   </div>
+                ))
+              ) : (
+                <div className="text-center py-4">
+                  <p className="text-gray-500">No cases available</p>
                 </div>
-              ))}
+              )}
             </div>
           </div>
         </div>
