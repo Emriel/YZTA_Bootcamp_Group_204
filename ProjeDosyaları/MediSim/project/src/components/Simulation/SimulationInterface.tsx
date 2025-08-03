@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Case, AIInteraction } from '../../types';
-import { mockCases } from '../../data/mockData';
 import { GeminiPatientSimulator } from '../../services/geminiService';
 import { 
   Send, 
@@ -30,52 +29,108 @@ const SimulationInterface: React.FC<SimulationInterfaceProps> = ({ caseId, onCom
   const [apiError, setApiError] = useState<string | null>(null);
 
   useEffect(() => {
-    const foundCase = mockCases.find(c => c.id === caseId);
-    setCase(foundCase || null);
-    
-    if (foundCase) {
-      // Initialize Gemini Patient Simulator
-      const simulator = new GeminiPatientSimulator(foundCase);
-      setPatientSimulator(simulator);
-      
-      // Get initial patient greeting
-      const initializePatient = async () => {
-        try {
-          setIsLoading(true);
-          const greeting = await simulator.getInitialGreeting();
-          
-          const initialMessage: AIInteraction = {
-            id: '1',
-            sessionId: 'current',
-            question: '', // AI greeting için question boş
-            response: greeting,
-            timestamp: new Date().toISOString(),
-            type: 'symptom_inquiry'
-          };
-          
-          setMessages([initialMessage]);
-          setApiError(null);
-        } catch (error) {
-          console.error('Error initializing patient:', error);
-          setApiError('API connection problem. Please check your API key.');
-          
-          // Fallback to mock response
-          const fallbackMessage: AIInteraction = {
-            id: '1',
-            sessionId: 'current',
-            question: '', // AI greeting için question boş
-            response: `Hello doctor. I'm a ${foundCase.patientInfo.age}-year-old ${foundCase.patientInfo.gender} patient. ${foundCase.description} I'd like to consult with you about this issue.`,
-            timestamp: new Date().toISOString(),
-            type: 'symptom_inquiry'
-          };
-          
-          setMessages([fallbackMessage]);
-        } finally {
-          setIsLoading(false);
+    const fetchCase = async () => {
+      try {
+        setIsLoading(true);
+        
+        // Backend'den belirli case'i getir
+        const response = await fetch(`http://localhost:3001/cases/${caseId}`);
+        const backendCase = await response.json();
+        
+        if (backendCase.error) {
+          console.error('Case not found:', backendCase.error);
+          setCase(null);
+          return;
         }
-      };
-      
-      initializePatient();
+
+        // Backend verilerini frontend formatına çevir
+        const parseJsonField = (field: string) => {
+          try {
+            return typeof field === 'string' ? JSON.parse(field) : (field || []);
+          } catch {
+            return typeof field === 'string' ? field.split(', ').filter(Boolean) : (field || []);
+          }
+        };
+
+        const formattedCase: Case = {
+          id: backendCase.id.toString(),
+          title: backendCase.title,
+          description: backendCase.description,
+          category: backendCase.category,
+          difficulty: backendCase.difficulty,
+          duration: backendCase.duration,
+          tags: parseJsonField(backendCase.tags),
+          patientInfo: {
+            age: backendCase.patient_age,
+            gender: backendCase.patient_gender,
+            medicalHistory: parseJsonField(backendCase.medical_history),
+            currentMedications: parseJsonField(backendCase.current_medications)
+          },
+          symptoms: parseJsonField(backendCase.symptoms),
+          vitals: {
+            temperature: backendCase.temperature,
+            bloodPressure: backendCase.blood_pressure,
+            heartRate: backendCase.heart_rate,
+            respiratoryRate: backendCase.respiratory_rate
+          },
+          createdBy: 'instructor1',
+          createdAt: backendCase.created_at || new Date().toISOString()
+        };
+
+        setCase(formattedCase);
+        
+        // Initialize Gemini Patient Simulator
+        const simulator = new GeminiPatientSimulator(formattedCase);
+        setPatientSimulator(simulator);
+        
+        // Get initial patient greeting
+        const initializePatient = async () => {
+          try {
+            const greeting = await simulator.getInitialGreeting();
+            
+            const initialMessage: AIInteraction = {
+              id: '1',
+              sessionId: 'current',
+              question: '', // AI greeting için question boş
+              response: greeting,
+              timestamp: new Date().toISOString(),
+              type: 'symptom_inquiry'
+            };
+            
+            setMessages([initialMessage]);
+            setApiError(null);
+          } catch (error) {
+            console.error('Error initializing patient:', error);
+            setApiError('API connection problem. Please check your API key.');
+            
+            // Fallback to mock response
+            const fallbackMessage: AIInteraction = {
+              id: '1',
+              sessionId: 'current',
+              question: '', // AI greeting için question boş
+              response: `Hello doctor. I'm a ${formattedCase.patientInfo.age}-year-old ${formattedCase.patientInfo.gender} patient. ${formattedCase.description} I'd like to consult with you about this issue.`,
+              timestamp: new Date().toISOString(),
+              type: 'symptom_inquiry'
+            };
+            
+            setMessages([fallbackMessage]);
+          } finally {
+            setIsLoading(false);
+          }
+        };
+        
+        await initializePatient();
+        
+      } catch (error) {
+        console.error('Error fetching case:', error);
+        setApiError('Error loading case data.');
+        setCase(null);
+        setIsLoading(false);
+      }
+    };
+
+    if (caseId) {
+      fetchCase();
     }
   }, [caseId]);
 

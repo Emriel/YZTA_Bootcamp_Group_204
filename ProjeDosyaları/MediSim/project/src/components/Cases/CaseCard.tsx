@@ -19,9 +19,9 @@ const CaseCard: React.FC<CaseCardProps> = ({ case: caseData, onStart, showProgre
     }
   };
 
-  // Tag listesi düzeltmesi
-  const tagList: string[] = caseData.tags
-    ? caseData.tags.split(',').map((tag: string) => tag.trim()).filter(Boolean)
+  // Tag listesi düzeltmesi - artık tags array formatında geliyor
+  const tagList: string[] = Array.isArray(caseData.tags) 
+    ? caseData.tags 
     : [];
 
   return (
@@ -43,8 +43,7 @@ const CaseCard: React.FC<CaseCardProps> = ({ case: caseData, onStart, showProgre
             <div className="flex items-center">
               <Users className="h-4 w-4 mr-1" />
               <span>
-                {(caseData.patient_age !== undefined ? caseData.patient_age + 'y ' : 'N/A ')}
-                {caseData.patient_gender || ''}
+                {caseData.patientInfo?.age || 'N/A'}y {caseData.patientInfo?.gender || ''}
               </span>
             </div>
           </div>

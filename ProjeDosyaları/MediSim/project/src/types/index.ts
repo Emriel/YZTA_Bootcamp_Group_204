@@ -17,6 +17,32 @@ export interface Case {
   difficulty: 'beginner' | 'intermediate' | 'advanced';
   category: string;
   duration: number; // in minutes
+  symptoms: string[]; // array of symptoms
+  vitals: {
+    temperature: string;
+    bloodPressure: string;
+    heartRate: string;
+    respiratoryRate: string;
+  };
+  patientInfo: {
+    age: number;
+    gender: 'male' | 'female';
+    medicalHistory: string[];
+    currentMedications: string[];
+  };
+  tags: string[];
+  createdBy?: string;
+  createdAt?: string;
+}
+
+// Backend Case format
+export interface BackendCase {
+  id: string;
+  title: string;
+  description: string;
+  difficulty: 'beginner' | 'intermediate' | 'advanced';
+  category: string;
+  duration: number;
   symptoms: string; // comma-separated string
   temperature: string;
   blood_pressure: string;
@@ -27,8 +53,7 @@ export interface Case {
   medical_history: string; // comma-separated string
   current_medications: string; // comma-separated string
   tags: string; // comma-separated string
-  createdBy?: string;
-  createdAt?: string;
+  created_at?: string;
 }
 
 export interface CaseSession {

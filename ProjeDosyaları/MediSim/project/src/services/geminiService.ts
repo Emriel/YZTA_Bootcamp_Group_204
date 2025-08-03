@@ -20,9 +20,64 @@ export class GeminiPatientSimulator {
   private conversationHistory: string[] = [];
   private case: Case | null = null;
 
-  constructor(caseData: Case) {
-    this.case = caseData;
-    this.initializePatient();
+  constructor(caseData?: Case, caseId?: string) {
+    if (caseData) {
+      this.case = caseData;
+      this.initializePatient();
+    } else if (caseId) {
+      this.loadCaseFromBackend(caseId);
+    }
+  }
+
+  private async loadCaseFromBackend(caseId: string) {
+    try {
+      const response = await fetch(`http://localhost:3001/cases/${caseId}`);
+      const caseData = await response.json();
+      
+      if (caseData.error) {
+        throw new Error(caseData.error);
+      }
+
+      // JSON string'leri parse et
+      const parseJsonField = (field: string) => {
+        try {
+          return typeof field === 'string' ? JSON.parse(field) : (field || []);
+        } catch {
+          return typeof field === 'string' ? field.split(', ').filter(Boolean) : (field || []);
+        }
+      };
+
+      // Backend verilerini Case formatına çevir
+      this.case = {
+        id: caseData.id.toString(),
+        title: caseData.title,
+        description: caseData.description,
+        category: caseData.category,
+        difficulty: caseData.difficulty,
+        duration: caseData.duration,
+        tags: parseJsonField(caseData.tags),
+        patientInfo: {
+          age: caseData.patient_age,
+          gender: caseData.patient_gender,
+          medicalHistory: parseJsonField(caseData.medical_history),
+          currentMedications: parseJsonField(caseData.current_medications)
+        },
+        symptoms: parseJsonField(caseData.symptoms),
+        vitals: {
+          temperature: caseData.temperature,
+          bloodPressure: caseData.blood_pressure,
+          heartRate: caseData.heart_rate,
+          respiratoryRate: caseData.respiratory_rate
+        },
+        createdBy: 'instructor1',
+        createdAt: caseData.created_at || new Date().toISOString()
+      };
+
+      this.initializePatient();
+    } catch (error) {
+      console.error('Error loading case from backend:', error);
+      throw error;
+    }
   }
 
   private initializePatient() {
@@ -86,7 +141,7 @@ Introduce yourself in your first message and state your main complaint.`;
     }
   }
 
-  private determineResponseType(question: string, response: string): PatientResponse['type'] {
+  private determineResponseType(question: string, _response: string): PatientResponse['type'] {
     const questionLower = question.toLowerCase();
     
     if (questionLower.includes('symptom') || questionLower.includes('complaint') || questionLower.includes('problem')) {

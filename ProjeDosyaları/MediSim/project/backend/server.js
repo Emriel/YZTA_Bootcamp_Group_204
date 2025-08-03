@@ -106,6 +106,25 @@ app.get('/cases', (req, res) => {
   });
 });
 
+// Belirli bir vakayı getirme
+app.get('/cases/:id', (req, res) => {
+  const caseId = req.params.id;
+  
+  db.get(
+    'SELECT * FROM cases WHERE id = ?',
+    [caseId],
+    (err, row) => {
+      if (err) {
+        return res.status(500).json({ error: err.message });
+      }
+      if (!row) {
+        return res.status(404).json({ error: 'Case not found' });
+      }
+      res.json(row);
+    }
+  );
+});
+
 const PORT = 3001;
 app.listen(PORT, () => {
   console.log(`Sunucu http://localhost:${PORT} adresinde çalışıyor`);
