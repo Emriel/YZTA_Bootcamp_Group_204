@@ -266,21 +266,21 @@ MediSim'in hedef kitlesi başta tıp fakültesi öğrencileri olmak üzere, klin
 
 <details>
 <summary><h3>Sprint Board</h3></summary>
-<img src="readmeFiles/Sprint2/Sprint2-Trello.png" style="max-width: 100%; height: auto;">
+<img src="readmeFiles/Sprint3/Sprint3-Trello.png" style="max-width: 100%; height: auto;">
 </details>
 
 <details>
 <summary><h3>Daily Scrum Kayıtları</h3></summary>
-<img src="readmeFiles/Sprint2/DailyScrum/Toplantı.png" style="max-width: 100%; height: auto;">
-<img src="readmeFiles/Sprint2/DailyScrum/1.png" style="max-width: 100%; height: auto;">
-<img src="readmeFiles/Sprint2/DailyScrum/2.png" style="max-width: 100%; height: auto;">  
-<img src="readmeFiles/Sprint2/DailyScrum/3.png" style="max-width: 100%; height: auto;">  
-<img src="readmeFiles/Sprint2/DailyScrum/4.png" style="max-width: 100%; height: auto;">  
-<img src="readmeFiles/Sprint2/DailyScrum/5.png" style="max-width: 100%; height: auto;">  
-<img src="readmeFiles/Sprint2/DailyScrum/6.png" style="max-width: 100%; height: auto;">  
-<img src="readmeFiles/Sprint2/DailyScrum/7.png" style="max-width: 100%; height: auto;">  
-<img src="readmeFiles/Sprint2/DailyScrum/8.png" style="max-width: 100%; height: auto;">  
-<img src="readmeFiles/Sprint2/DailyScrum/9.png" style="max-width: 100%; height: auto;">  
+<img src="readmeFiles/Sprint3/DailyScrum/Toplantı.png" style="max-width: 100%; height: auto;">
+<img src="readmeFiles/Sprint3/DailyScrum/1.png" style="max-width: 100%; height: auto;">
+<img src="readmeFiles/Sprint3/DailyScrum/2.png" style="max-width: 100%; height: auto;">  
+<img src="readmeFiles/Sprint3/DailyScrum/3.png" style="max-width: 100%; height: auto;">  
+<img src="readmeFiles/Sprint3/DailyScrum/4.png" style="max-width: 100%; height: auto;">
+<img src="readmeFiles/Sprint3/DailyScrum/5.png" style="max-width: 100%; height: auto;">
+<img src="readmeFiles/Sprint3/DailyScrum/6.png" style="max-width: 100%; height: auto;">  
+<img src="readmeFiles/Sprint3/DailyScrum/7.png" style="max-width: 100%; height: auto;">  
+<img src="readmeFiles/Sprint3/DailyScrum/8.png" style="max-width: 100%; height: auto;">
+<img src="readmeFiles/Sprint3/DailyScrum/9.png" style="max-width: 100%; height: auto;">
 </details>
 
 <h3>Sprint Notları</h3>
@@ -330,14 +330,43 @@ MediSim'in hedef kitlesi başta tıp fakültesi öğrencileri olmak üzere, klin
 <summary><h1>Sprint 3</h1></summary>
 
 <details>
-<summary><h3>Sprint 3 - App Screenshots</h3></summary>
-<p>Uygulamanın bu sprintte gelişen ekranları aşağıda başlıklar halinde gösterilmiştir.</p>
-
-<h4>1. Ana Sayfa ve Giriş Ekranı</h4>
-<img src="readmeFiles/Sprint3/screenshots1.png" style="max-width: 100%; height: auto;">
-
-<h4>2. Klinik Seçim ve Vaka Başlatma</h4>
-<img src="readmeFiles/Sprint3/screenshots2.png" style="max-width: 100%; height: auto;">
+<summary><h3>App Screenshots</h3></summary>
+<table style="width: 100%;">
+   <tr>
+    <td style="text-align: center;" colspan="3"><h2>Homepage</h2></td>
+  </tr>
+  <tr>
+    <td><img src="readmeFiles/Sprint2/HomePage.png" style="max-width: 100%; height: auto;"></td>
+  </tr>
+  <tr>
+    <td style="text-align: center;" colspan="3"><h2>Login & Register Pages</h2></td>
+  </tr>
+  <tr>
+    <td><img src="readmeFiles/Sprint2/Login page.png" style="max-width: 100%; height: auto;"></td>
+    <td><img src="readmeFiles/Sprint2/sign up page.png" style="max-width: 100%; height: auto;"></td>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: center;"><h2>Student Pages</h2></td>
+  </tr>
+  <tr>
+    <td><img src="readmeFiles/sprint3/Project Student/dashboard.png" style="max-width: 100%; height: auto;"></td>
+    <td><img src="readmeFiles/Sprint3/Project Student/case.png" style="max-width: 100%; height: auto;"></td>
+    <td><img src="readmeFiles/Sprint3/Project Student/simmulation.png" style="max-width: 100%; height: auto;"></td>
+    <td><img src="readmeFiles/Sprint3/Project Student/translate.png" style="max-width: 100%; height: auto;"></td>
+    <td><img src="readmeFiles/Sprint3/Project Student/settings.png" style="max-width: 100%; height: auto;"></td>
+  </tr>
+  <tr>
+    <td colspan="3" style="text-align: center;"><h2>Instructor Pages</h2></td>
+  </tr>
+  <tr>
+    <td><img src="readmeFiles/Sprint3/Project Instructor/dashboard.png" style="max-width: 100%; height: auto;"></td>
+    <td><img src="readmeFiles/Sprint3/Project Instructor/createCase.png" style="max-width: 100%; height: auto;"></td>
+    <td><img src="readmeFiles/Sprint3/Project Instructor/case.png" style="max-width: 100%; height: auto;"></td>
+    <td><img src="readmeFiles/Sprint3/Project Instructor/simulation.png" style="max-width: 100%; height: auto;"></td>
+    <td><img src="readmeFiles/Sprint3/Project Instructor/translate.png" style="max-width: 100%; height: auto;"></td>
+    <td><img src="readmeFiles/Sprint3/Project Instructor/settings.png" style="max-width: 100%; height: auto;"></td>
+  </tr>
+</table>
 </details>
 
 <details>
@@ -347,9 +376,11 @@ MediSim'in hedef kitlesi başta tıp fakültesi öğrencileri olmak üzere, klin
 
 <details>
 <summary><h3>Daily Scrum Kayıtları</h3></summary>
+<img src="readmeFiles/Sprint3/DailyScrum/toplantı.png" style="max-width: 100%; height: auto;">
 <img src="readmeFiles/Sprint3/DailyScrum/1.png" style="max-width: 100%; height: auto;">
 <img src="readmeFiles/Sprint3/DailyScrum/2.png" style="max-width: 100%; height: auto;">
 <img src="readmeFiles/Sprint3/DailyScrum/3.png" style="max-width: 100%; height: auto;">
+<img src="readmeFiles/Sprint3/DailyScrum/4.png" style="max-width: 100%; height: auto;">
 </details>
 
 <h3>Sprint Notları</h3>
@@ -407,23 +438,6 @@ MediSim'in hedef kitlesi başta tıp fakültesi öğrencileri olmak üzere, klin
 
 <hr>
 
-<h2>📱 Uygulama Ekran Görüntüleri</h2>
-<ol>
-  <li>
-    <b>Ana Sayfa:</b>
-    <br>
-    <img src="readmeFiles/demo/screenshot1.png" alt="Ana Sayfa" style="max-width: 100%; border-radius: 10px; margin: 10px 0;">
-  </li>
-  <li>
-    <b>Klinik Seçimi ve Vakalar:</b>
-    <br>
-    <img src="readmeFiles/demo/screenshot2.png" alt="Klinik Seçimi" style="max-width: 100%; border-radius: 10px; margin: 10px 0;">
-  </li>
-  <!-- Dİğer ekran görüntülerini de ekleriz busaya -->
-</ol>
-
-<hr>
-
 <h2><b>Nasıl Çalıştırılır?</b></h2>
 
 <ol>
@@ -468,5 +482,6 @@ MediSim'in hedef kitlesi başta tıp fakültesi öğrencileri olmak üzere, klin
       </li>
     </ol>
   </li>
+<li>Siteye üyelik oluşturmadan giriş yapmak için "Sign-in" ekranında aşağıda gösterilen demo kullanıcıları kullanabilirsiniz.</li>
 </ol>
 <hr>
