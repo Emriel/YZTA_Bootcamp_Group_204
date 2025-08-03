@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer, useEffect } from 'react';
+import React, { createContext, useContext, useReducer } from 'react';
 import { User } from '../types';
 
 interface AuthState {
@@ -63,12 +63,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     isAuthenticated: false
   });
 
-  useEffect(() => {
-    const storedUser = localStorage.getItem('medisim_user');
-    if (storedUser) {
-      dispatch({ type: 'LOGIN_SUCCESS', payload: JSON.parse(storedUser) });
-    }
-  }, []);
+  // localStorage'dan otomatik login kaldırıldı - her seferinde manuel giriş gerekli
 
   const login = async (email: string, password: string) => {
     dispatch({ type: 'LOGIN_START' });
@@ -98,7 +93,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       createdAt: new Date().toISOString(),
     };
 
-    localStorage.setItem('medisim_user', JSON.stringify(fullUser));
+    // localStorage kalıcı oturum kaldırıldı - her seferinde manuel giriş gerekli
     dispatch({ type: 'LOGIN_SUCCESS', payload: fullUser });
   } catch (error) {
     console.error("Login error:", error);
@@ -133,7 +128,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       createdAt: new Date().toISOString(),
     };
 
-    localStorage.setItem('medisim_user', JSON.stringify(newUser));
+    // localStorage kalıcı oturum kaldırıldı - her seferinde manuel giriş gerekli
     dispatch({ type: 'REGISTER_SUCCESS', payload: newUser });
   } catch (error) {
     console.error("Register error:", error);
@@ -143,7 +138,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const logout = () => {
-    localStorage.removeItem('medisim_user');
+    // localStorage temizleme kaldırıldı - oturum zaten kalıcı değil
     dispatch({ type: 'LOGOUT' });
   };
 
