@@ -1,14 +1,15 @@
 import React from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { 
-  Home, 
-  FileText, 
-  BarChart3, 
-  Settings, 
-  BookOpen, 
-  Users, 
+  Home,
+  FileText,
+  BarChart3,
+  Settings,
+  BookOpen,
+  Users,
   Activity,
-  X
+  Languages, // Yeni ikon eklendi
+  X 
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -25,6 +26,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange, isOpen, onClo
     { id: 'dashboard', label: 'Dashboard', icon: Home },
     { id: 'cases', label: 'Cases', icon: FileText },
     { id: 'simulation', label: 'Active Simulation', icon: Activity },
+    { id: 'medicine-terms', label: 'Medicine Terms', icon: Languages }, // Yeni tab eklendi
     { id: 'settings', label: 'Settings', icon: Settings },
   ];
 
@@ -33,6 +35,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange, isOpen, onClo
     { id: 'cases', label: 'Cases', icon: FileText },
     { id: 'simulation', label: 'Active Simulation', icon: Activity },
     { id: 'library', label: 'Manage Cases', icon: BookOpen },
+    { id: 'medicine-terms', label: 'Medicine Terms', icon: Languages }, // Yeni tab eklendi
     { id: 'settings', label: 'Settings', icon: Settings },
   ];
 

@@ -10,6 +10,7 @@ import SimulationInterface from './components/Simulation/SimulationInterface';
 import PerformanceAnalytics from './components/Performance/PerformanceAnalytics';
 import Home from './components/Home';
 import UserProfileSettings from './components/UserProfileSettings';
+import MedicinTerms from './components/MedicinTerms/MedicinTerms';
 
 const AppContent: React.FC = () => {
   const { isAuthenticated, user } = useAuth();
@@ -34,8 +35,8 @@ const AppContent: React.FC = () => {
   if (!isAuthenticated) {
     if (!showAuth) {
       return <Home 
-        onLoginClick={() => setShowAuth('login')} 
-        onRegisterClick={() => setShowAuth('register')} 
+        onLoginClick={() => setShowAuth('login')}
+        onRegisterClick={() => setShowAuth('register')}
       />;
     }
     // showAuth 'login' ise isLogin true, 'register' ise false
@@ -46,7 +47,7 @@ const AppContent: React.FC = () => {
     if (activeTab === 'simulation' && currentCaseId) {
       return (
         <SimulationInterface 
-          caseId={currentCaseId} 
+          caseId={currentCaseId}
           onComplete={handleCompleteCase}
         />
       );
@@ -61,6 +62,8 @@ const AppContent: React.FC = () => {
         return <CaseList onStartCase={handleStartCase} />;
       case 'performance':
         return <PerformanceAnalytics />;
+      case 'medicine-terms':
+        return <MedicinTerms />; // Yeni case eklendi
       case 'settings':
         return <UserProfileSettings />;
       default:
@@ -78,16 +81,17 @@ const AppContent: React.FC = () => {
       <Header onMenuClick={() => setSidebarOpen(true)} />
       <div className="flex">
         <Sidebar 
-          activeTab={activeTab} 
-          onTabChange={setActiveTab} 
+          activeTab={activeTab}
+          onTabChange={setActiveTab}
           isOpen={sidebarOpen}
           onClose={() => setSidebarOpen(false)}
         />
-        <main className="flex-1 p-6 md:ml-64">
-          <div className="max-w-7xl mx-auto">
-            {renderContent()}
-          </div>
-        </main>
+    <main className="flex-1 p-6 md:ml-64">
+      <div className="w-full max-w-[100%] px-4">
+        {renderContent()}
+      </div>
+    </main>
+
       </div>
     </div>
   );
