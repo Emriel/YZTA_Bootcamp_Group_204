@@ -429,7 +429,7 @@ MediSim'in hedef kitlesi başta tıp fakültesi öğrencileri olmak üzere, klin
 <h1><b>MediSim - Uygulama Tanıtımı</b></h1>
 
 <!-- Kapak Görseli -->
-<img src="readmeFiles/demo/screenshot1.png" alt="MediSim Tanıtım Görseli" style="width: 100%; max-height: 500px; object-fit: cover; border-radius: 10px; margin-bottom: 20px;">
+<img src="readmeFiles/Sprint2/Logo/medisimlogoDAR.png" alt="MediSim Tanıtım Görseli" style="width: 100%; max-height: 500px; object-fit: cover; border-radius: 10px; margin-bottom: 20px;">
 
 <!-- Video Linki -->
 <p style="font-size: 1.1rem; font-weight: bold; margin-top: 10px;">
