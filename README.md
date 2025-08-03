@@ -355,25 +355,33 @@ MediSim'in hedef kitlesi başta tıp fakültesi öğrencileri olmak üzere, klin
 <h3>Sprint 3 Geliştirme Notları</h3>
 
 <div class="sprint-section">
-  <h4>Çok Dilli Destek ve Klinik Yönetimi</h4>
-  <p>Bu sprint döneminde uygulamamıza İngilizce ve Latince dil desteği ekleyerek kullanıcıların arayüz dilini seçebilmesini sağladık. Medikal terim çevirilerini özenle kontrol ederek tutarlı bir deneyim sunduk. Klinik bazlı vaka yönetim sistemini yeniden yapılandırdık; artık öğrenciler doğrudan hastalık seçmek yerine ilgili klinik üzerinden vakalara yönlendiriliyor. Bu sayede daha gerçekçi klinik senaryoları oluştururken, yeni entegre ettiğimiz puanlama sistemiyle performans değerlendirmesi yapabiliyoruz.</p>
+  <h4>• Çok Dilli Destek ve Klinik Yönetimi</h4>
+  <div style="padding-left: 20px;">
+    <p>Uygulamamıza Latince–İngilizce çeviri özelliği entegre edilerek, hastalık terimleri ve medikal terminolojiler arasında dinamik bir geçiş sağlandı. Kullanıcıların yazdığı hastalık isimleri üzerinden çalışan sistem, hem terim çevirisini gerçekleştirmekte hem de kenarda ilgili kelimenin etimolojisine dair bilgiler sunmaktadır. Bu sayede kullanıcılar yalnızca Latince karşılıkları öğrenmekle kalmayıp, terimlerin kökenine dair bilgiye de kolaylıkla ulaşabilmektedir.</p>
+    <p>Klinik bazlı vaka yönetim sistemini yeniden yapılandırdık; artık öğrenciler doğrudan hastalık seçmek yerine ilgili klinik üzerinden vakalara yönlendiriliyor. Bu sayede daha gerçekçi klinik senaryoları oluştururken, yeni entegre ettiğimiz puanlama sistemiyle performans değerlendirmesi yapabiliyoruz.</p>
+  </div>
 </div>
 
 <div class="sprint-section">
-  <h4>Veritabanı ve Eğitim Modülleri</h4>
-  <p>Veritabanı tarafında vaka tablosunu genişleterek daha detaylı veri saklama imkanı oluşturduk. Yaptığımız yapısal iyileştirmelerle veri tutarlılığını artırırken sistem performansını da optimize ettik. Eğitim içeriklerini zenginleştirmek amacıyla "Tıbbi Günün Kelimesi" modülünü geliştirdik. Bu modül sayesinde kullanıcılar günlük medikal terimler öğrenip mini quizlerle bilgilerini test edebiliyor, böylece etkileşimli bir öğrenme deneyimi yaşıyorlar.</p>
+  <h4>• Veritabanı ve Eğitim Modülleri</h4>
+  <div style="padding-left: 20px;">
+    <p>Veritabanı tarafında vaka tablosunu genişleterek daha detaylı veri saklama imkanı oluşturduk. Yaptığımız yapısal iyileştirmelerle veri tutarlılığını artırırken sistem performansını da optimize ettik. Eğitim içeriklerini zenginleştirmek amacıyla "Tıbbi Günün Kelimesi" modülünü geliştirdik. Bu modül sayesinde kullanıcılar günlük medikal terimler öğrenip mini quizlerle bilgilerini test edebiliyor, böylece etkileşimli bir öğrenme deneyimi yaşıyorlar.</p>
+  </div>
 </div>
 
 <div class="sprint-section">
-  <h4>Arayüz İyileştirmeleri ve Testler</h4>
-  <p>Kullanıcı arayüzünde kapsamlı bir temizlik yaparak kullanılmayan bileşenleri kaldırdık, yazı tipi ve renk şemasını gözden geçirerek daha tutarlı bir görünüm sağladık. Sprint boyunca form girişleri, vaka başlatma gibi kritik işlevleri edge-case senaryolarıyla test ederek tespit ettiğimiz küçük hataları düzelttik.</p>
+  <h4>• Arayüz İyileştirmeleri ve Testler</h4>
+  <div style="padding-left: 20px;">
+    <p>Kullanıcı arayüzünde kapsamlı bir temizlik yaparak kullanılmayan bileşenleri kaldırdık, yazı tipi ve renk şemasını gözden geçirerek daha tutarlı bir görünüm sağladık. Sprint boyunca form girişleri, vaka başlatma gibi kritik işlevleri edge-case senaryolarıyla test ederek tespit ettiğimiz küçük hataları düzelttik.</p>
+  </div>
 </div>
 
 <div class="sprint-section">
   <h4>Gelecek Planları</h4>
-  <p>Bu sprintin sonunda gelecek dönemler için bir yol haritası oluşturduk. Öncelikli modülleri belirleyerek geliştirme sürelerini planladık ve uzun vadeli hedeflerimizi gözden geçirdik. Yaptığımız bu çalışmalarla sistemimizin hem teknik altyapısını güçlendirdik hem de kullanıcı deneyimini önemli ölçüde iyileştirdik.</p>
+  <div style="padding-left: 20px;">
+    <p>Bu sprintin sonunda gelecek dönemler için bir yol haritası oluşturduk. Öncelikli modülleri belirleyerek geliştirme sürelerini planladık ve uzun vadeli hedeflerimizi gözden geçirdik. Yaptığımız bu çalışmalarla sistemimizin hem teknik altyapısını güçlendirdik hem de kullanıcı deneyimini önemli ölçüde iyileştirdik.</p>
+  </div>
 </div>
-
 
 <b>Expected Point Completion within Sprint:</b> 100 puan <br>
 <b>Point Completion Logic:</b> Puanlama mantığı ilk sprint’te belirlendiği gibidir ve bu sprint’te de hedeflenen puana ulaşılmıştır.
@@ -383,9 +391,8 @@ MediSim'in hedef kitlesi başta tıp fakültesi öğrencileri olmak üzere, klin
 
 <h3>Sprint Review</h3>
 <ul>
-  <li>Çok dilli destek başarıyla entegre edildi.</li>
+  <li>Latince–İngilizce çeviri özelliği başarıyla entegre edildi.</li>
   <li>Klinik temelli vaka ayrımı kullanıcı arayüzünde etkili şekilde çalışıyor.</li>
-  <li>Mini quiz ve puanlama sistemi ile kullanıcı etkileşimi artırıldı.</li>
 </ul>
 
 <h3>Sprint Review Katılımcıları:</h3>
@@ -394,8 +401,7 @@ MediSim'in hedef kitlesi başta tıp fakültesi öğrencileri olmak üzere, klin
 <h3>Sprint Retrospective</h3>
 <ul>
   <li><strong>İyi Yönler:</strong> Tüm işler planlandığı gibi zamanında tamamlandı. Takım içi iş birliği oldukça uyumluydu.</li>
-  <li><strong>Geliştirilecek Alanlar:</strong> UI testleri sprint başında yapılmalıydı, sonlara bırakıldığında düzenlemelere yeterli zaman kalmadı.</li>
-  <li><strong>Önemli Çıkarımlar:</strong> Latince dil desteği başarılı sonuçlar verdi. Bu sistem, gelecek aşamalarda diğer dillerle genişletilebilir.</li>
+  <li><strong>Önemli Çıkarımlar:</strong> Uygulama kararlı ve hatasız şekilde çalışmaktadır. Bu stabilite, sonraki sürümler için sağlam bir temel oluşturuyor.</li>
 </ul>
 
 </details>
@@ -427,7 +433,49 @@ MediSim'in hedef kitlesi başta tıp fakültesi öğrencileri olmak üzere, klin
     <br>
     <img src="readmeFiles/demo/screenshot2.png" alt="Klinik Seçimi" style="max-width: 100%; border-radius: 10px; margin: 10px 0;">
   </li>
-  <!-- Daha fazla ekran görüntüsü varsa buraya ekleyebilirsin -->
+  <!-- Dİğer ekran görüntülerini de ekleriz busaya -->
 </ol>
 
+<hr>
 
+<h2><b>Nasıl Çalıştırılır?</b></h2>
+
+<ol>
+  <li><b>Projeyi Klonlayın:</b>
+    <pre><code>git clone https://github.com/YZTA-Bootcamp-Group-204/medisim.git</code></pre>
+  </li>
+
+  <li><b>Proje dizinine girin:</b>
+    <pre><code>cd ProjeDosyalari/MediSim/project</code></pre>
+  </li>
+  
+  <li><b>Gerekli bağımlılıkları yükleyin:</b>
+    <pre><code>npm install</code></pre>
+  </li>
+  
+  <li><b>.env dosyasını oluşturun:</b><br>
+    Package.json ile aynı dizinde şu formatta bir <code>.env</code> dosyası oluşturmalısınız:
+    <pre><code>VITE_GEMINI_API_KEY=kendi_api_keyiniz</code></pre>
+    <small>API anahtarınızı <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a>'dan ücretsiz alabilirsiniz.</small>
+  </li>
+  
+  <li><b>Uygulamayı Başlatın</b>
+    <pre><code>npm run dev</code></pre>
+  </li>
+  
+
+  <li><b>Backend'i Başlatın:</b>
+    <ol type="a">
+      <li><b>Backend dizinine geçin:</b>
+        <pre><code>cd backend</code></pre>
+      </li>
+      <li><b>Gerekli bağımlılıkları yükleyin:</b>
+        <pre><code>npm install</code></pre>
+      </li>
+      <li><b>Backend sunucusunu başlatın:</b>
+        <pre><code>npm start</code></pre>
+      </li>
+    </ol>
+  </li>
+</ol>
+<hr>
