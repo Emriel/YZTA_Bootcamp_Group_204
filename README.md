@@ -349,9 +349,9 @@ MediSim'in hedef kitlesi başta tıp fakültesi öğrencileri olmak üzere, klin
     <td colspan="3" style="text-align: center;"><h2>Student Pages</h2></td>
   </tr>
   <tr>
-    <td><img src="readmeFiles/sprint3/Project Student/dashboard.png" style="max-width: 100%; height: auto;"></td>
+    <td><img src="readmeFiles/Sprint3/Project Student/dashboard.png" style="max-width: 100%; height: auto;"></td>
     <td><img src="readmeFiles/Sprint3/Project Student/case.png" style="max-width: 100%; height: auto;"></td>
-    <td><img src="readmeFiles/Sprint3/Project Student/simmulation.png" style="max-width: 100%; height: auto;"></td>
+    <td><img src="readmeFiles/Sprint3/Project Student/simulation.png" style="max-width: 100%; height: auto;"></td>
     <td><img src="readmeFiles/Sprint3/Project Student/translate.png" style="max-width: 100%; height: auto;"></td>
     <td><img src="readmeFiles/Sprint3/Project Student/settings.png" style="max-width: 100%; height: auto;"></td>
   </tr>
@@ -376,11 +376,11 @@ MediSim'in hedef kitlesi başta tıp fakültesi öğrencileri olmak üzere, klin
 
 <details>
 <summary><h3>Daily Scrum Kayıtları</h3></summary>
-<img src="readmeFiles/Sprint3/DailyScrum/toplantı.png" style="max-width: 100%; height: auto;">
-<img src="readmeFiles/Sprint3/DailyScrum/1.png" style="max-width: 100%; height: auto;">
-<img src="readmeFiles/Sprint3/DailyScrum/2.png" style="max-width: 100%; height: auto;">
-<img src="readmeFiles/Sprint3/DailyScrum/3.png" style="max-width: 100%; height: auto;">
-<img src="readmeFiles/Sprint3/DailyScrum/4.png" style="max-width: 100%; height: auto;">
+<img src="readmeFiles/Sprint3/Daily Scrum/toplantı.png" style="max-width: 100%; height: auto;">
+<img src="readmeFiles/Sprint3/Daily Scrum/1.png" style="max-width: 100%; height: auto;">
+<img src="readmeFiles/Sprint3/Daily Scrum/2.png" style="max-width: 100%; height: auto;">
+<img src="readmeFiles/Sprint3/Daily Scrum/3.png" style="max-width: 100%; height: auto;">
+<img src="readmeFiles/Sprint3/Daily Scrum/4.png" style="max-width: 100%; height: auto;">
 </details>
 
 <h3>Sprint Notları</h3>
