@@ -57,7 +57,7 @@ const AppContent: React.FC = () => {
       case 'dashboard':
         return user?.role === 'instructor' ? 
           <InstructorDashboard /> : 
-          <StudentDashboard onNavigateToTab={setActiveTab} />;
+          <StudentDashboard />;
       case 'cases':
         return <CaseList onStartCase={handleStartCase} />;
       case 'performance':

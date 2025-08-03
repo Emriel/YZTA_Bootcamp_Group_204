@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { mockCases } from '../../data/mockData';
 import { 
@@ -9,7 +9,8 @@ import {
   BookOpen, 
   Plus,
   BarChart3,
-  Activity
+  Activity,
+  Heart
 } from 'lucide-react';
 import CreateCaseForm from './CreateCaseForm';
 
@@ -17,12 +18,35 @@ const InstructorDashboard: React.FC = () => {
   const { user } = useAuth();
   const [showCreateCase, setShowCreateCase] = useState(false);
 
-  const stats = [
-    { label: 'Active Students', value: 47, icon: Users, color: 'bg-blue-500' },
-    { label: 'Total Cases', value: mockCases.length, icon: FileText, color: 'bg-green-500' },
-    { label: 'Avg. Performance', value: '78%', icon: TrendingUp, color: 'bg-purple-500' },
-    { label: 'Hours Simulated', value: 142, icon: Clock, color: 'bg-orange-500' },
+  // Health quotes (Latin + English meaning)
+  const healthQuotes = [
+    { latin: "Mens sana in corpore sano.", english: "A healthy mind in a healthy body." },
+    { latin: "Salus populi suprema lex esto.", english: "The health of the people shall be the supreme law." },
+    { latin: "Medicus curat, natura sanat.", english: "The doctor treats, nature heals." },
+    { latin: "Vita brevis, ars longa.", english: "Life is short, art is long." },
+    { latin: "Cura te ipsum.", english: "Take care of yourself." },
+    { latin: "Non est vivere sed valere vita est.", english: "Life is not just being alive, but being well." },
+    { latin: "Qui bene dormit, bene vivit.", english: "He who sleeps well, lives well." },
+    { latin: "Sanitas sanitatum, omnia sanitas.", english: "Health of healths, everything is health." },
+    { latin: "Plenus venter non studet libenter.", english: "A full belly does not study willingly." },
+    { latin: "Sine sanitate vita misera est.", english: "Without health, life is miserable." },
+    { latin: "Mens aegra corpus habet languidum.", english: "A sick mind has a weary body." },
+    { latin: "Medicina est ars bene vivendi.", english: "Medicine is the art of living well." },
+    { latin: "Aegris morbo remedium quaerere.", english: "To seek a remedy for the sick." },
+    { latin: "Salus per aquam.", english: "Health through water." },
+    { latin: "Sanitas prima est.", english: "Health is first." }
   ];
+
+  const [currentQuote, setCurrentQuote] = useState(0);
+
+  // Auto-change quotes
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentQuote((prev) => (prev + 1) % healthQuotes.length);
+    }, 60000); // Changes every 60 seconds
+
+    return () => clearInterval(interval);
+  }, [healthQuotes.length]);
 
   const recentActivity = [
     { student: 'Alex Chen', case: 'Acute Chest Pain', score: 85, time: '2 hours ago' },
@@ -31,7 +55,7 @@ const InstructorDashboard: React.FC = () => {
   ];
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Instructor Dashboard</h1>
@@ -47,27 +71,69 @@ const InstructorDashboard: React.FC = () => {
       </div>
       {showCreateCase && <CreateCaseForm onClose={() => setShowCreateCase(false)} />}
 
-      {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {stats.map((stat, index) => {
-          const Icon = stat.icon;
-          return (
-            <div key={index} className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
-              <div className="flex items-center">
-                <div className={`${stat.color} p-3 rounded-lg`}>
-                  <Icon className="h-6 w-6 text-white" />
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Health Quote Section */}
+        <div className="lg:col-span-2">
+          <div className="bg-gradient-to-r from-green-400 to-blue-500 rounded-xl shadow-sm p-6 text-white">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                  <Heart className="h-6 w-6 text-white" />
                 </div>
-                <div className="ml-4">
-                  <p className="text-sm font-medium text-gray-600">{stat.label}</p>
-                  <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
-                </div>
+                <h2 className="text-lg font-semibold">Daily Health Quote</h2>
+              </div>
+              <div className="flex-1 ml-12">
+                <p className="text-white/95 text-2xl font-medium italic leading-relaxed animate-fadeInOut">
+                  {healthQuotes[currentQuote].latin}
+                </p>
+                <p className="text-white/70 text-xl italic mt-1 animate-fadeInOut">
+                  ({healthQuotes[currentQuote].english})
+                </p>
               </div>
             </div>
-          );
-        })}
+            {/* Dot indicators */}
+            <div className="flex justify-center mt-4">
+              <div className="flex space-x-2">
+                {healthQuotes.map((_, index) => (
+                  <div
+                    key={index}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      index === currentQuote ? 'bg-white' : 'bg-white/40'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-6">
+          {/* Case Library Stats */}
+          <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">Case Library</h2>
+            <div className="space-y-3">
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-gray-600">Cardiology</span>
+                <span className="font-medium">8 cases</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-gray-600">Pediatrics</span>
+                <span className="font-medium">6 cases</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-gray-600">Emergency</span>
+                <span className="font-medium">5 cases</span>
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-gray-600">Gastroenterology</span>
+                <span className="font-medium">4 cases</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-1">
         {/* Recent Student Activity */}
         <div className="lg:col-span-2">
           <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
@@ -108,49 +174,8 @@ const InstructorDashboard: React.FC = () => {
         </div>
 
         <div className="space-y-6">
-          {/* Case Library Stats */}
-          <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">Case Library</h2>
-            <div className="space-y-3">
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-600">Cardiology</span>
-                <span className="font-medium">8 cases</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-600">Pediatrics</span>
-                <span className="font-medium">6 cases</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-600">Emergency</span>
-                <span className="font-medium">5 cases</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-gray-600">Gastroenterology</span>
-                <span className="font-medium">4 cases</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Performance Overview */}
-          <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg font-semibold text-gray-900">Performance Overview</h2>
-              <BarChart3 className="h-5 w-5 text-gray-400" />
-            </div>
-            <div className="space-y-3">
-              <div className="flex justify-between text-sm">
-                <span className="text-gray-600">Class Average</span>
-                <span className="font-medium">78%</span>
-              </div>
-              <div className="w-full bg-gray-200 rounded-full h-2">
-                <div className="bg-blue-600 h-2 rounded-full" style={{ width: '78%' }} />
-              </div>
-              <div className="flex justify-between text-xs text-gray-500">
-                <span>Needs Improvement</span>
-                <span>Excellent</span>
-              </div>
-            </div>
-          </div>
+          {/* Placeholder for balance */}
+          <div></div>
         </div>
       </div>
     </div>
