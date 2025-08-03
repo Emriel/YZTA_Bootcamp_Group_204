@@ -3,7 +3,7 @@ import CaseCard from './CaseCard';
 import { Search, Plus } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
 import CreateCaseForm from '../Dashboard/CreateCaseForm';
-import { Case } from '../../types';
+import { Case, BackendCase } from '../../types';
 
 interface CaseListProps {
   onStartCase: (caseId: string) => void;
@@ -22,8 +22,46 @@ const CaseList: React.FC<CaseListProps> = ({ onStartCase }) => {
     const fetchCases = async () => {
       try {
         const response = await fetch('http://localhost:3001/cases');
-        const data = await response.json();
-        setCases(data);
+        const backendData = await response.json();
+        
+        // Backend verilerini frontend formatına çevir
+        const formattedCases: Case[] = backendData.map((backendCase: any) => {
+          // JSON string'leri parse et
+          const parseJsonField = (field: string) => {
+            try {
+              return typeof field === 'string' ? JSON.parse(field) : (field || []);
+            } catch {
+              return typeof field === 'string' ? field.split(', ').filter(Boolean) : (field || []);
+            }
+          };
+
+          return {
+            id: backendCase.id.toString(),
+            title: backendCase.title,
+            description: backendCase.description,
+            difficulty: backendCase.difficulty,
+            category: backendCase.category,
+            duration: backendCase.duration,
+            symptoms: parseJsonField(backendCase.symptoms),
+            vitals: {
+              temperature: backendCase.temperature || 'N/A',
+              bloodPressure: backendCase.blood_pressure || 'N/A',
+              heartRate: backendCase.heart_rate || 'N/A',
+              respiratoryRate: backendCase.respiratory_rate || 'N/A'
+            },
+            patientInfo: {
+              age: backendCase.patient_age || 0,
+              gender: backendCase.patient_gender || 'male',
+              medicalHistory: parseJsonField(backendCase.medical_history),
+              currentMedications: parseJsonField(backendCase.current_medications)
+            },
+            tags: parseJsonField(backendCase.tags),
+            createdBy: 'instructor1',
+            createdAt: backendCase.created_at || new Date().toISOString()
+          };
+        });
+        
+        setCases(formattedCases);
       } catch (error) {
         console.error('Vaka verileri alınırken hata:', error);
       } finally {

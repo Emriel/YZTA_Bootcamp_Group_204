@@ -1,30 +1,51 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { mockCases, mockPerformance } from '../../data/mockData';
 import { 
   BookOpen, 
-  Clock, 
-  Trophy, 
-  TrendingUp, 
   Play, 
-  Star,
+  Trophy,
   Calendar,
-  Target
+  Heart
 } from 'lucide-react';
 
 const StudentDashboard: React.FC = () => {
   const { user } = useAuth();
 
-  const recentCases = mockCases.slice(0, 3);
-  const stats = [
-    { label: 'Cases Completed', value: mockPerformance.completedCases, icon: BookOpen, color: 'bg-blue-500' },
-    { label: 'Average Score', value: `${mockPerformance.averageScore}%`, icon: Star, color: 'bg-green-500' },
-    { label: 'Total Cases', value: mockPerformance.totalCases, icon: Target, color: 'bg-purple-500' },
-    { label: 'Achievements', value: mockPerformance.achievements.length, icon: Trophy, color: 'bg-orange-500' },
+  // Health quotes (Latin + English meaning)
+  const healthQuotes = [
+    { latin: "Mens sana in corpore sano.", english: "A healthy mind in a healthy body." },
+    { latin: "Salus populi suprema lex esto.", english: "The health of the people shall be the supreme law." },
+    { latin: "Medicus curat, natura sanat.", english: "The doctor treats, nature heals." },
+    { latin: "Vita brevis, ars longa.", english: "Life is short, art is long." },
+    { latin: "Cura te ipsum.", english: "Take care of yourself." },
+    { latin: "Non est vivere sed valere vita est.", english: "Life is not just being alive, but being well." },
+    { latin: "Qui bene dormit, bene vivit.", english: "He who sleeps well, lives well." },
+    { latin: "Sanitas sanitatum, omnia sanitas.", english: "Health of healths, everything is health." },
+    { latin: "Plenus venter non studet libenter.", english: "A full belly does not study willingly." },
+    { latin: "Sine sanitate vita misera est.", english: "Without health, life is miserable." },
+    { latin: "Mens aegra corpus habet languidum.", english: "A sick mind has a weary body." },
+    { latin: "Medicina est ars bene vivendi.", english: "Medicine is the art of living well." },
+    { latin: "Aegris morbo remedium quaerere.", english: "To seek a remedy for the sick." },
+    { latin: "Salus per aquam.", english: "Health through water." },
+    { latin: "Sanitas prima est.", english: "Health is first." }
   ];
 
+  const [currentQuote, setCurrentQuote] = useState(0);
+
+  // Auto-change quotes
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentQuote((prev) => (prev + 1) % healthQuotes.length);
+    }, 60000); // Changes every 60 seconds
+
+    return () => clearInterval(interval);
+  }, [healthQuotes.length]);
+
+  const recentCases = mockCases.slice(0, 3);
+
   return (
-    <div className="space-y-6">
+    <div className="space-y-3">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Welcome back, {user?.name}!</h1>
@@ -36,28 +57,59 @@ const StudentDashboard: React.FC = () => {
         </div>
       </div>
 
-      {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {stats.map((stat, index) => {
-          const Icon = stat.icon;
-          return (
-            <div key={index} className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
-              <div className="flex items-center">
-                <div className={`${stat.color} p-3 rounded-lg`}>
-                  <Icon className="h-6 w-6 text-white" />
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Health Quote Section */}
+        <div className="lg:col-span-2">
+          <div className="bg-gradient-to-r from-green-400 to-blue-500 rounded-xl shadow-sm p-6 text-white">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                  <Heart className="h-6 w-6 text-white" />
                 </div>
-                <div className="ml-4">
-                  <p className="text-sm font-medium text-gray-600">{stat.label}</p>
-                  <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
-                </div>
+                <h2 className="text-lg font-semibold">Daily Health Quote</h2>
+              </div>
+              <div className="flex-1 ml-12">
+                <p className="text-white/95 text-2xl font-medium italic leading-relaxed animate-fadeInOut">
+                  {healthQuotes[currentQuote].latin}
+                </p>
+                <p className="text-white/70 text-xl italic mt-1 animate-fadeInOut">
+                  ({healthQuotes[currentQuote].english})
+                </p>
               </div>
             </div>
-          );
-        })}
+            {/* Dot indicators */}
+            <div className="flex justify-center mt-4">
+              <div className="flex space-x-2">
+                {healthQuotes.map((_, index) => (
+                  <div
+                    key={index}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      index === currentQuote ? 'bg-white' : 'bg-white/40'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-6">
+          {/* Recent Achievement */}
+          <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">Latest Achievement</h2>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                <Trophy className="h-8 w-8 text-orange-600" />
+              </div>
+              <h3 className="font-medium text-gray-900">{mockPerformance.achievements[0]?.title}</h3>
+              <p className="text-sm text-gray-500 mt-1">{mockPerformance.achievements[0]?.description}</p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      {/* Recent Activity */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-1">
+        {/* Recent Cases */}
         <div className="lg:col-span-2">
           <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
             <div className="flex items-center justify-between mb-4">
@@ -86,10 +138,8 @@ const StudentDashboard: React.FC = () => {
                     }`}>
                       {case_.difficulty}
                     </span>
-                    <button className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg">
-                      <Play className="h-4 w-4" />
-                    </button>
                   </div>
+
                 </div>
               ))}
             </div>
@@ -97,17 +147,8 @@ const StudentDashboard: React.FC = () => {
         </div>
 
         <div className="space-y-6">
-          {/* Recent Achievement */}
-          <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">Latest Achievement</h2>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                <Trophy className="h-8 w-8 text-orange-600" />
-              </div>
-              <h3 className="font-medium text-gray-900">{mockPerformance.achievements[0]?.title}</h3>
-              <p className="text-sm text-gray-500 mt-1">{mockPerformance.achievements[0]?.description}</p>
-            </div>
-          </div>
+          {/* Placeholder for balance */}
+          <div></div>
         </div>
       </div>
     </div>

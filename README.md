@@ -321,3 +321,113 @@ MediSim'in hedef kitlesi başta tıp fakültesi öğrencileri olmak üzere, klin
 </ul>
 
 </details>
+<hr />
+
+<details>
+
+  <!-- SPRINT 3 TEMPLATE -->
+  
+<summary><h1>Sprint 3</h1></summary>
+
+<details>
+<summary><h3>Sprint 3 - App Screenshots</h3></summary>
+<p>Uygulamanın bu sprintte gelişen ekranları aşağıda başlıklar halinde gösterilmiştir.</p>
+
+<h4>1. Ana Sayfa ve Giriş Ekranı</h4>
+<img src="readmeFiles/Sprint3/screenshots1.png" style="max-width: 100%; height: auto;">
+
+<h4>2. Klinik Seçim ve Vaka Başlatma</h4>
+<img src="readmeFiles/Sprint3/screenshots2.png" style="max-width: 100%; height: auto;">
+</details>
+
+<details>
+<summary><h3>Sprint Board</h3></summary>
+<img src="readmeFiles/Sprint3/Sprint3-Trello.png" style="max-width: 100%; height: auto;">
+</details>
+
+<details>
+<summary><h3>Daily Scrum Kayıtları</h3></summary>
+<img src="readmeFiles/Sprint3/DailyScrum/1.png" style="max-width: 100%; height: auto;">
+<img src="readmeFiles/Sprint3/DailyScrum/2.png" style="max-width: 100%; height: auto;">
+<img src="readmeFiles/Sprint3/DailyScrum/3.png" style="max-width: 100%; height: auto;">
+</details>
+
+<h3>Sprint 3 Geliştirme Notları</h3>
+
+<div class="sprint-section">
+  <h4>Çok Dilli Destek ve Klinik Yönetimi</h4>
+  <p>Bu sprint döneminde uygulamamıza İngilizce ve Latince dil desteği ekleyerek kullanıcıların arayüz dilini seçebilmesini sağladık. Medikal terim çevirilerini özenle kontrol ederek tutarlı bir deneyim sunduk. Klinik bazlı vaka yönetim sistemini yeniden yapılandırdık; artık öğrenciler doğrudan hastalık seçmek yerine ilgili klinik üzerinden vakalara yönlendiriliyor. Bu sayede daha gerçekçi klinik senaryoları oluştururken, yeni entegre ettiğimiz puanlama sistemiyle performans değerlendirmesi yapabiliyoruz.</p>
+</div>
+
+<div class="sprint-section">
+  <h4>Veritabanı ve Eğitim Modülleri</h4>
+  <p>Veritabanı tarafında vaka tablosunu genişleterek daha detaylı veri saklama imkanı oluşturduk. Yaptığımız yapısal iyileştirmelerle veri tutarlılığını artırırken sistem performansını da optimize ettik. Eğitim içeriklerini zenginleştirmek amacıyla "Tıbbi Günün Kelimesi" modülünü geliştirdik. Bu modül sayesinde kullanıcılar günlük medikal terimler öğrenip mini quizlerle bilgilerini test edebiliyor, böylece etkileşimli bir öğrenme deneyimi yaşıyorlar.</p>
+</div>
+
+<div class="sprint-section">
+  <h4>Arayüz İyileştirmeleri ve Testler</h4>
+  <p>Kullanıcı arayüzünde kapsamlı bir temizlik yaparak kullanılmayan bileşenleri kaldırdık, yazı tipi ve renk şemasını gözden geçirerek daha tutarlı bir görünüm sağladık. Sprint boyunca form girişleri, vaka başlatma gibi kritik işlevleri edge-case senaryolarıyla test ederek tespit ettiğimiz küçük hataları düzelttik.</p>
+</div>
+
+<div class="sprint-section">
+  <h4>Gelecek Planları</h4>
+  <p>Bu sprintin sonunda gelecek dönemler için bir yol haritası oluşturduk. Öncelikli modülleri belirleyerek geliştirme sürelerini planladık ve uzun vadeli hedeflerimizi gözden geçirdik. Yaptığımız bu çalışmalarla sistemimizin hem teknik altyapısını güçlendirdik hem de kullanıcı deneyimini önemli ölçüde iyileştirdik.</p>
+</div>
+
+
+<b>Expected Point Completion within Sprint:</b> 100 puan <br>
+<b>Point Completion Logic:</b> Puanlama mantığı ilk sprint’te belirlendiği gibidir ve bu sprint’te de hedeflenen puana ulaşılmıştır.
+
+<h3>Product Backlog URL:</h3>
+<p><a href="https://trello.com/b/pUqcwSsc/yzta-bootcamp" target="_blank">Trello Backlog</a></p>
+
+<h3>Sprint Review</h3>
+<ul>
+  <li>Çok dilli destek başarıyla entegre edildi.</li>
+  <li>Klinik temelli vaka ayrımı kullanıcı arayüzünde etkili şekilde çalışıyor.</li>
+  <li>Mini quiz ve puanlama sistemi ile kullanıcı etkileşimi artırıldı.</li>
+</ul>
+
+<h3>Sprint Review Katılımcıları:</h3>
+<p>Elif Kartal, Emirhan Toprak, Ömer Biltekin, Şevval Demir, Umut Sönmez</p>
+
+<h3>Sprint Retrospective</h3>
+<ul>
+  <li><strong>İyi Yönler:</strong> Tüm işler planlandığı gibi zamanında tamamlandı. Takım içi iş birliği oldukça uyumluydu.</li>
+  <li><strong>Geliştirilecek Alanlar:</strong> UI testleri sprint başında yapılmalıydı, sonlara bırakıldığında düzenlemelere yeterli zaman kalmadı.</li>
+  <li><strong>Önemli Çıkarımlar:</strong> Latince dil desteği başarılı sonuçlar verdi. Bu sistem, gelecek aşamalarda diğer dillerle genişletilebilir.</li>
+</ul>
+
+</details>
+
+<hr />
+
+<!-- MEDISIM UYGULAMA TANITIMI -->
+<h1><b>MediSim - Uygulama Tanıtımı</b></h1>
+
+<!-- Kapak Görseli -->
+<img src="readmeFiles/demo/screenshot1.png" alt="MediSim Tanıtım Görseli" style="width: 100%; max-height: 500px; object-fit: cover; border-radius: 10px; margin-bottom: 20px;">
+
+<!-- Video Linki -->
+<p style="font-size: 1.1rem; font-weight: bold; margin-top: 10px;">
+🎬 <a href="readmeFiles/demo/medisim-demo.mp4" target="_blank">Tanıtım Videosunu İzlemek İçin Tıklayın</a>
+</p>
+
+<hr>
+
+<h2>📱 Uygulama Ekran Görüntüleri</h2>
+<ol>
+  <li>
+    <b>Ana Sayfa:</b>
+    <br>
+    <img src="readmeFiles/demo/screenshot1.png" alt="Ana Sayfa" style="max-width: 100%; border-radius: 10px; margin: 10px 0;">
+  </li>
+  <li>
+    <b>Klinik Seçimi ve Vakalar:</b>
+    <br>
+    <img src="readmeFiles/demo/screenshot2.png" alt="Klinik Seçimi" style="max-width: 100%; border-radius: 10px; margin: 10px 0;">
+  </li>
+  <!-- Daha fazla ekran görüntüsü varsa buraya ekleyebilirsin -->
+</ol>
+
+
