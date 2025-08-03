@@ -112,8 +112,9 @@ const InstructorDashboard: React.FC<InstructorDashboardProps> = ({ onNavigateToT
       {showCreateCase && <CreateCaseForm onClose={() => setShowCreateCase(false)} />}
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Health Quote Section */}
-        <div className="lg:col-span-2">
+        {/* Left column - Health Quote and Popular Cases */}
+        <div className="lg:col-span-2 space-y-6">
+          {/* Health Quote Section */}
           <div className="bg-gradient-to-r from-green-400 to-blue-500 rounded-xl shadow-sm p-6 text-white">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-4">
@@ -145,38 +146,8 @@ const InstructorDashboard: React.FC<InstructorDashboardProps> = ({ onNavigateToT
               </div>
             </div>
           </div>
-        </div>
 
-        <div className="space-y-6">
-          {/* Case Library Stats */}
-          <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">Case Library</h2>
-            <div className="space-y-3">
-              {isLoadingStats ? (
-                <div className="text-center py-4">
-                  <div className="inline-block animate-spin rounded-full h-4 w-4 border-b-2 border-blue-600"></div>
-                  <p className="text-gray-500 text-sm mt-2">Loading statistics...</p>
-                </div>
-              ) : categoryStats.length > 0 ? (
-                categoryStats.map((stat, index) => (
-                  <div key={index} className="flex justify-between items-center">
-                    <span className="text-sm text-gray-600 capitalize">{stat.category}</span>
-                    <span className="font-medium">{stat.count} case{stat.count !== 1 ? 's' : ''}</span>
-                  </div>
-                ))
-              ) : (
-                <div className="text-center py-4">
-                  <p className="text-gray-500 text-sm">No cases found</p>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-1">
-        {/* Popular Cases */}
-        <div className="lg:col-span-2">
+          {/* Popular Cases */}
           <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-lg font-semibold text-gray-900">Popular Cases</h2>
@@ -225,9 +196,31 @@ const InstructorDashboard: React.FC<InstructorDashboardProps> = ({ onNavigateToT
           </div>
         </div>
 
+        {/* Right column - Case Library */}
         <div className="space-y-6">
-          {/* Placeholder for balance */}
-          <div></div>
+          {/* Case Library Stats */}
+          <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-200">
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">Case Library</h2>
+            <div className="space-y-3">
+              {isLoadingStats ? (
+                <div className="text-center py-4">
+                  <div className="inline-block animate-spin rounded-full h-4 w-4 border-b-2 border-blue-600"></div>
+                  <p className="text-gray-500 text-sm mt-2">Loading statistics...</p>
+                </div>
+              ) : categoryStats.length > 0 ? (
+                categoryStats.map((stat, index) => (
+                  <div key={index} className="flex justify-between items-center">
+                    <span className="text-sm text-gray-600 capitalize">{stat.category}</span>
+                    <span className="font-medium">{stat.count} case{stat.count !== 1 ? 's' : ''}</span>
+                  </div>
+                ))
+              ) : (
+                <div className="text-center py-4">
+                  <p className="text-gray-500 text-sm">No cases found</p>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </div>
